@@ -1,0 +1,22 @@
+Package: NatManager
+Title: Install the natverse packages from scratch
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Sridhar",
+           family = "Jagannathan",
+           role = c("aut", "cre"),
+           email = "j.sridharrajan@gmail.com",
+           comment = c(ORCID = "0000-0002-2078-1145"))
+Description: A package tool to install natverse packages from scratch.
+License: GPL-3
+Imports:
+    utils
+Suggests: 
+    remotes,
+    testthat,
+    withr,
+    curl,
+    knitr
+Encoding: UTF-8
+Language: en-GB
+LazyData: true

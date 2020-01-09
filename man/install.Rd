@@ -4,10 +4,12 @@
 \alias{install}
 \title{Install packages inside the natverse repository.}
 \usage{
-install(pkgname, ...)
+install(pkgname, dependencies = TRUE, ...)
 }
 \arguments{
 \item{pkgname}{Package name inside the `natverse` repository.}
+
+\item{dependencies}{Which dependencies you want to install see \code{\link[remotes]{install_github}}.}
 
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
 }
@@ -17,6 +19,7 @@ Further, if the GITHUB_PAT is set it will start installing the dependencies of t
 }
 \examples{
 \dontrun{
-install()
+library('NatManager')
+install('natverse')
 }
 }

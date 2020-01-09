@@ -5,10 +5,10 @@
 
 <!-- badges: start -->
 
-[![NatManager](https://img.shields.io/badge/natverse-Part%20of%20the%20natverse-a241b6)](https://natverse.github.io)
-[![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](https://natverse.github.io/natverse/reference/)
+[![NatManager](https://img.shields.io/badge/NatManager-Part%20of%20the%20natverse-a241b6)](https://natverse.github.io)
+[![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](https://natverse.github.io/NatManager/reference/)
 [![Travis build
-status](https://travis-ci.org/natverse/natverse.svg?branch=master)](https://travis-ci.org/natverse/natverse)
+status](https://travis-ci.org/natverse/NatManager.svg?branch=master)](https://travis-ci.org/natverse/NatManager)
 <!-- badges: end -->
 
 The goal of NatManager is to handle the installation of all packages

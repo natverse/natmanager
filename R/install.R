@@ -12,7 +12,7 @@
 #' library('NatManager')
 #' install('natverse')
 #' }
-install <- function(pkgname,dependencies=TRUE, ...) {
+install <- function(pkgname = 'natverse',dependencies=TRUE, ...) {
 
   if(!requireNamespace('remotes', quietly=TRUE)) utils::install.packages('remotes')
   if(!requireNamespace('usethis', quietly=TRUE)) utils::install.packages('usethis')

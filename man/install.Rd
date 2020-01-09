@@ -4,7 +4,7 @@
 \alias{install}
 \title{Install packages inside the natverse repository.}
 \usage{
-install(pkgname, dependencies = TRUE, ...)
+install(pkgname = "natverse", dependencies = TRUE, ...)
 }
 \arguments{
 \item{pkgname}{Package name inside the `natverse` repository.}

@@ -2,7 +2,6 @@ r = getOption("repos")
 r["CRAN"] = "http://cran.us.r-project.org"
 options(repos = r)
 
-
 test_that("installation works", {
 
   #Run tests on travis only if the GITHUB_PAT is set
@@ -10,7 +9,10 @@ test_that("installation works", {
     skip("Skipping as Github PAT is not set")
   }
 
-  remove.packages('nat.devtools')
+  if (requireNamespace('nat.devtools', quietly=TRUE)){
+    remove.packages('nat.devtools', lib = .libPaths())
+  }
+
   NatManager::install('nat.devtools')
   expect_equal(requireNamespace('nat.devtools', quietly=TRUE),TRUE)
 

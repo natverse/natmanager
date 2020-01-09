@@ -13,7 +13,7 @@ test_that("installation works", {
     remove.packages('nat.devtools', lib = .libPaths())
   }
 
-  natmanager::install('nat.devtools')
+  natmanager::install('nat.devtools', dependencies = FALSE)
   expect_equal(requireNamespace('nat.devtools', quietly=TRUE),TRUE)
 
 })

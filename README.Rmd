@@ -45,6 +45,7 @@ NatManager::install('natverse')
 
 You can also look at all the repos avaiable in the natverse organization as follows:
 
-```r
+```{r list repos}
 NatManager::list_repo()
 ```
+

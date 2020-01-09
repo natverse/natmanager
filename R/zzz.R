@@ -22,7 +22,7 @@ natmessage <- function(status,pkgname){
   if(status == 'Unset'){
     packageStartupMessage(paste0('Attempting to set GITHUB_PAT before using: ',pkgname))
   }else if (status == 'Set'){
-    packageStartupMessage(paste0('Using already set GITHUB_PAT for: ',pkgname))
+    #packageStartupMessage(paste0('Using already set GITHUB_PAT for: ',pkgname))
   }else if (status == 'Prompt'){
     packageStartupMessage(paste0('Start using R interactively to set GITHUB_PAT for: ',pkgname))
   }

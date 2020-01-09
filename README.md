@@ -42,4 +42,11 @@ as follows:
 
 ``` r
 NatManager::list_repo()
+#>  [1] "nat"                "flycircuit"         "nat.flybrains"     
+#>  [4] "nat.examples"       "nat.nblast"         "nat.templatebrains"
+#>  [7] "rcatmaid"           "elmr"               "mouselightr"       
+#> [10] "nat.jrcbrains"      "nat.h5reg"          "drvid"             
+#> [13] "neuprintr"          "neuromorphr"        "natverse"          
+#> [16] "natverse_hugo"      "natverse.github.io" "insectbrainr"      
+#> [19] "nat.devtools"       "fishatlas"          "NatManager"
 ```

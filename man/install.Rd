@@ -19,7 +19,7 @@ Further, if the GITHUB_PAT is set it will start installing the dependencies of t
 }
 \examples{
 \dontrun{
-library('NatManager')
+library('natmanager')
 install('natverse')
 }
 }

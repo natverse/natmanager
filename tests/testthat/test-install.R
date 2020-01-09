@@ -13,7 +13,7 @@ test_that("installation works", {
     remove.packages('nat.devtools', lib = .libPaths())
   }
 
-  NatManager::install('nat.devtools')
+  natmanager::install('nat.devtools')
   expect_equal(requireNamespace('nat.devtools', quietly=TRUE),TRUE)
 
 })
@@ -26,6 +26,6 @@ test_that("list all natverse repos ", {
     skip("Skipping as Github PAT is not set")
   }
 
-  pckgs <- NatManager::list_repo()
+  pckgs <- natmanager::list_repo()
   expect_is(pckgs, 'character')
 })

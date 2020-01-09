@@ -1,4 +1,4 @@
 library(testthat)
-library(NatManager)
+library(natmanager)
 
-test_check("NatManager")
+test_check("natmanager")

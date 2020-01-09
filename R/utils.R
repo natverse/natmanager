@@ -6,7 +6,7 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' library('NatManager')
+#' library('natmanager')
 #' list_repo()
 #' }
 

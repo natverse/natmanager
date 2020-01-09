@@ -17,7 +17,7 @@ This will list all the repositories inside the `natverse` organization.
 }
 \examples{
 \dontrun{
-library('NatManager')
+library('natmanager')
 list_repo()
 }
 }

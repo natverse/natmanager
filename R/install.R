@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' library('NatManager')
+#' library('natmanager')
 #' install('natverse')
 #' }
 install <- function(pkgname = 'natverse',dependencies=TRUE, ...) {

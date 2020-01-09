@@ -14,8 +14,8 @@ install(pkgname = "natverse", dependencies = TRUE, ...)
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
 }
 \description{
-This will check to see if the GITHUB_PAT is set and will provide instructions to the user to set it
-Further, if the GITHUB_PAT is set it will start installing the dependencies of the `natverse` package.
+This will check to see if the GITHUB_PAT is set and will provide instructions to the user to set it.
+Further if the GITHUB_PAT is set, it will start installing the dependencies of the `natverse` package.
 }
 \examples{
 \dontrun{

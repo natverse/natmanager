@@ -1,7 +1,7 @@
 #' Install packages inside the natverse repository.
 #'
-#' This will check to see if the GITHUB_PAT is set and will provide instructions to the user to set it
-#' Further, if the GITHUB_PAT is set it will start installing the dependencies of the `natverse` package.
+#' This will check to see if the GITHUB_PAT is set and will provide instructions to the user to set it.
+#' Further if the GITHUB_PAT is set, it will start installing the dependencies of the `natverse` package.
 #' @param pkgname Package name inside the `natverse` repository.
 #' @param dependencies Which dependencies you want to install see \code{\link[remotes]{install_github}}.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}.

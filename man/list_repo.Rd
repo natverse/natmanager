@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{list_repo}
 \alias{list_repo}
-\title{List all the repos inside a particular ogranization inside the natverse repository.}
+\title{List all the repos inside a particular organization inside the natverse repository.}
 \usage{
 list_repo(orgname = "natverse")
 }

@@ -1,4 +1,4 @@
-#' List all the repos inside a particular ogranization inside the natverse repository.
+#' List all the repos inside a particular organization inside the natverse repository.
 #'
 #' This will list all the repositories inside the `natverse` organization.
 #' @param orgname Name of the organization in github to list repositories from.

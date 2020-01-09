@@ -37,8 +37,8 @@ as follows:
 natmanager::install('natverse')
 ```
 
-You can also look at all the repos avaiable in the natverse organization
-as follows:
+You can also look at all the repos available in the natverse
+organization as follows:
 
 ``` r
 natmanager::list_repo()

@@ -36,3 +36,10 @@ as follows:
 ``` r
 NatManager::install('natverse')
 ```
+
+You can also look at all the repos avaiable in the natverse organization
+as follows:
+
+``` r
+NatManager::list_repo()
+```

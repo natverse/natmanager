@@ -16,11 +16,6 @@ install <- function(pkgname,dependencies=TRUE, ...) {
 
   if(!requireNamespace('remotes', quietly=TRUE)) utils::install.packages('remotes')
   if(!requireNamespace('usethis', quietly=TRUE)) utils::install.packages('usethis')
-  if(!nzchar(Sys.getenv('GITHUB_PAT'))) {
-    message('Attempting to set GITHUB_PAT')
-    usethis::browse_github_token()
-    message('Run the install function again after following above instructions')
-  } else{
-    remotes::install_github(paste0("natverse/",pkgname),auth_token = Sys.getenv('GITHUB_PAT'), dependencies=dependencies, ...)
-  }
+  remotes::install_github(paste0("natverse/",pkgname),auth_token = Sys.getenv('GITHUB_PAT'),
+                          dependencies=dependencies, ...)
 }

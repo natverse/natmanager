@@ -2,15 +2,3 @@
 
 language: r
 cache: packages
-os:
-  - osx
-env:
-  global:
-    - RGL_USE_NULL=TRUE
-jobs:
-  include:
-    - stage: prepare cache
-      script: true
-    - stage: test
-before_install:
-  - echo 'options(Ncpus = 2)' >> ~/.Rprofile

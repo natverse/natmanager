@@ -18,7 +18,7 @@ test_that("installation works", {
     remove.packages(pkgname, lib = liblocs)
   }
 
-  natmanager::install(pkgname, dependencies = TRUE, lib = liblocs)
+  natmanager::install(pkgname, repos = "https://cloud.r-project.org", dependencies = TRUE, lib = liblocs)
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 
 })

@@ -3,10 +3,16 @@
 language: r
 cache: packages
 os:
-  - osx
+  - linux
 env:
   global:
     - RGL_USE_NULL=TRUE
+    
+addons:
+  apt:
+    packages:
+    - r-base-dev
+    
 jobs:
   include:
     - stage: prepare cache

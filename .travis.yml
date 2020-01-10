@@ -12,6 +12,9 @@ addons:
   apt:
     packages:
     - r-base-dev
+    - r-cran-rcppeigen
+    - r-cran-matrix 
+    - r-cran-rcpp
     
 jobs:
   include:

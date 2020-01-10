@@ -9,12 +9,13 @@ test_that("installation works", {
     skip("Skipping as Github PAT is not set")
   }
 
-  if (requireNamespace('fishatlas', quietly=TRUE)){
-    remove.packages('fishatlas', lib = .libPaths())
+  pkgname <- 'nat.devtools'
+  if (requireNamespace(pkgname, lib.loc = .libPaths(), quietly=TRUE)){
+    remove.packages(pkgname, lib = .libPaths())
   }
 
-  natmanager::install('fishatlas', dependencies = TRUE)
-  expect_equal(requireNamespace('fishatlas', quietly=TRUE),TRUE)
+  natmanager::install(pkgname, dependencies = TRUE, lib = .libPaths())
+  expect_equal(requireNamespace(pkgname, lib.loc = .libPaths(), quietly=TRUE),TRUE)
 
 })
 

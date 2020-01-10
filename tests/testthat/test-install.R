@@ -17,9 +17,6 @@ test_that("installation works", {
     remove.packages(pkgname, lib = liblocs)
   }
 
-  utils::install.packages('lattice', dependencies = TRUE, lib = liblocs,
-                          repos = "http://cran.us.r-project.org")
-
   natmanager::install(pkgname, dependencies = TRUE, lib = liblocs, repos = "http://cran.us.r-project.org")
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 

@@ -5,7 +5,7 @@ cache: packages
 os:
   - linux
 r:
-  - 3.5.2
+  - 3.6.1
 env:
   global:
     - RGL_USE_NULL=TRUE

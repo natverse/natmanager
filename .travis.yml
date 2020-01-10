@@ -4,6 +4,8 @@ language: r
 cache: packages
 os:
   - linux
+r:
+  - 3.5.2
 env:
   global:
     - RGL_USE_NULL=TRUE

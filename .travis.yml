@@ -9,7 +9,6 @@ addons:
     packages:
     - libglu1-mesa-dev
     - libmagick++-dev
-    - gfortran
 env:
   global:
     - RGL_USE_NULL=TRUE
@@ -20,3 +19,5 @@ jobs:
     - stage: test
 before_install:
   - echo 'options(Ncpus = 2)' >> ~/.Rprofile
+before_script:
+  - R -e '﻿utils::install("lattice")'

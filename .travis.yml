@@ -19,5 +19,3 @@ jobs:
     - stage: test
 before_install:
   - echo 'options(Ncpus = 2)' >> ~/.Rprofile
-before_script:
-  - Rscript -e 'utils::install.packages("lattice")'

@@ -2,6 +2,8 @@
 #r["CRAN"] = "http://cran.us.r-project.org"
 #options(repos = r)
 
+liblocs <- .libPaths()[1]
+
 test_that("installation works", {
 
   #Run tests on travis only if the GITHUB_PAT is set
@@ -10,10 +12,13 @@ test_that("installation works", {
   }
 
   pkgname <- 'nat.devtools'
-  liblocs <- .libPaths()[1]
+
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)
   }
+
+  utils::install.packages('lattice', dependencies = TRUE, lib = liblocs,
+                          repos = "http://cran.us.r-project.org")
 
   natmanager::install(pkgname, dependencies = TRUE, lib = liblocs, repos = "http://cran.us.r-project.org")
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)

@@ -3,6 +3,8 @@
 language: r
 cache: packages
 dist: bionic
+os:
+  - linux
 r:
   - 3.6.1
 env:

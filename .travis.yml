@@ -4,12 +4,6 @@ language: r
 cache: packages
 os:
   - osx
-  - linux
-addons:
-  apt:
-    packages:
-    - libglu1-mesa-dev
-    - libmagick++-dev
 env:
   global:
     - RGL_USE_NULL=TRUE

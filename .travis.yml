@@ -1,28 +1,5 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: r
-cache: packages
 dist: bionic
-os:
-  - linux
-r:
-  - 3.6.1
-env:
-  global:
-    - RGL_USE_NULL=TRUE
-    
-addons:
-  apt:
-    packages:
-    - r-base-dev
-    - r-cran-rcppeigen
-    - r-cran-matrix 
-    - r-cran-rcpp
-    
-jobs:
-  include:
-    - stage: prepare cache
-      script: true
-    - stage: test
-before_install:
-  - echo 'options(Ncpus = 2)' >> ~/.Rprofile
+cache: packages

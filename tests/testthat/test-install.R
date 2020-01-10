@@ -11,7 +11,7 @@ test_that("installation works", {
     skip("Skipping as Github PAT is not set")
   }
 
-  pkgname <- 'nat.devtools'
+  pkgname <- 'nat'
 
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)

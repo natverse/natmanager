@@ -1,6 +1,3 @@
-#r = getOption("repos")
-#r["CRAN"] = "http://cran.us.r-project.org"
-#options(repos = r)
 
 liblocs <- .libPaths()[1]
 
@@ -10,6 +7,10 @@ test_that("installation works", {
   if (!nzchar(Sys.getenv('GITHUB_PAT'))) {
     skip("Skipping as Github PAT is not set")
   }
+  
+  r = getOption("repos")
+  r["CRAN"] = "https://cloud.r-project.org"
+  options(repos = r)
 
   pkgname <- 'nat'
 

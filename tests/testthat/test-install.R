@@ -14,8 +14,7 @@ test_that("installation works", {
     remove.packages(pkgname, lib = .libPaths())
   }
 
-  natmanager::install(pkgname, dependencies = TRUE, lib = .libPaths(),
-                      repos = "http://cran.us.r-project.org")
+  natmanager::install(pkgname, dependencies = TRUE, repos = "http://cran.us.r-project.org")
   expect_equal(requireNamespace(pkgname, lib.loc = .libPaths(), quietly=TRUE),TRUE)
 
 })

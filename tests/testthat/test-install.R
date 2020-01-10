@@ -10,12 +10,13 @@ test_that("installation works", {
   }
 
   pkgname <- 'nat.devtools'
-  if (requireNamespace(pkgname, lib.loc = .libPaths(), quietly=TRUE)){
-    remove.packages(pkgname, lib = .libPaths())
+  liblocs <- .libPaths()[1]
+  if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
+    remove.packages(pkgname, lib = liblocs)
   }
 
-  natmanager::install(pkgname, dependencies = TRUE, repos = "http://cran.us.r-project.org")
-  expect_equal(requireNamespace(pkgname, lib.loc = .libPaths(), quietly=TRUE),TRUE)
+  natmanager::install(pkgname, dependencies = TRUE, lib = liblocs, repos = "http://cran.us.r-project.org")
+  expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 
 })
 

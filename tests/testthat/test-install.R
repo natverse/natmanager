@@ -19,7 +19,7 @@ test_that("installation works", {
   }
   
   cat('\n--Session Info start--\n')
-  cat(sessionInfo())
+  print(sessionInfo())
   cat('\n--Session Info end--\n')
   
   natmanager::install(pkgname, repos = c(CRAN = "https://cran.rstudio.com"), dependencies = TRUE, lib = liblocs)

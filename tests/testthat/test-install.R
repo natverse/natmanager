@@ -1,5 +1,6 @@
 
-liblocs <- .libPaths()[1]
+#liblocs <- .libPaths()[1]
+liblocs <- "/home/travis/R/Library"
 
 test_that("installation works", {
 

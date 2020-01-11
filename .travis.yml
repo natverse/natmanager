@@ -8,6 +8,7 @@ addons:
     apt:
         packages:
             - libmagick++-dev
+            - libglu1-mesa-dev
 
 env:
   global:

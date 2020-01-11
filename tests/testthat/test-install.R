@@ -8,22 +8,22 @@ test_that("installation works", {
   if (!nzchar(Sys.getenv('GITHUB_PAT'))) {
     skip("Skipping as Github PAT is not set")
   }
-  
+
   r = getOption("repos")
   r["CRAN"] = "https://cloud.r-project.org"
   options(repos = r)
 
-  pkgname <- 'nat'
+  pkgname <- 'nat.devtools'
 
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)
   }
-  
+
   cat('\n--Session Info start--\n')
   print(sessionInfo())
   cat('\n--Session Info end--\n')
-  
-  natmanager::install(pkgname, repos = c(CRAN = "https://cran.rstudio.com"), dependencies = F, lib = liblocs)
+
+  natmanager::install(pkgname, repos = c(CRAN = "https://cran.rstudio.com"), dependencies = TRUE, lib = liblocs)
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 
 })

@@ -6,6 +6,9 @@ cache: packages
 r_binary_packages:
   - devtools
   - roxygen2
+  - r-cran-rcppeigen
+  - r-cran-rcpp 
+  - r-cran-matrix
 
 after_script:
   - Rscript -e 'devtools::install();devtools::test()'

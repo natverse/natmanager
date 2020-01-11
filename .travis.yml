@@ -3,3 +3,9 @@
 language: r
 dist: bionic
 cache: packages
+r_binary_packages:
+  - devtools
+  - roxygen2
+
+after_install:
+  - Rscript -e 'devtools::install();devtools::test()'

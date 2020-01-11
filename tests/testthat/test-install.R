@@ -15,6 +15,8 @@ test_that("installation works", {
 
   pkgname <- 'nat'
 
+  .libPaths( c( "/home/travis/R/Library" , .libPaths()))
+
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)
   }

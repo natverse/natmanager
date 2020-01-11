@@ -7,5 +7,5 @@ r_binary_packages:
   - devtools
   - roxygen2
 
-after_install:
+after_script:
   - Rscript -e 'devtools::install();devtools::test()'

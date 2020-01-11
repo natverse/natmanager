@@ -13,7 +13,7 @@ test_that("installation works", {
   r["CRAN"] = "https://cloud.r-project.org"
   options(repos = r)
 
-  pkgname <- 'nat'
+  pkgname <- 'nat.devtools'
 
   .libPaths( c( "/home/travis/R/Library" , .libPaths()))
 

@@ -19,7 +19,8 @@ before_install:
   - Rscript -e 'utils::install.packages("Matrix")'
   - Rscript -e 'utils::install.packages("RcppEigen")'
   - Rscript -e 'utils::install.packages("lattice")'
-  - Rscript -e 'utils::install.packages("MASS","mgcv")'
+  - Rscript -e 'utils::install.packages("MASS")'
+  - Rscript -e 'utils::install.packages("mgcv")'
 
 
 after_script:

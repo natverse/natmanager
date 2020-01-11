@@ -7,13 +7,18 @@ r_binary_packages:
   - devtools
   - roxygen2
   - rcppeigen
-  - rcpp 
+  - rcpp
   - matrix
-  
+
+addons:
+    apt:
+        packages:
+            - libmagick++-dev
+
 before_install:
   - Rscript -e 'utils::install.packages("Matrix")'
   - Rscript -e 'utils::install.packages("RcppEigen")'
   - Rscript -e 'utils::install.packages("lattice")'
-  
+
 after_script:
   - Rscript -e 'devtools::install();devtools::test()'

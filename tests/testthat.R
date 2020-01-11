@@ -3,6 +3,4 @@ library(natmanager)
 
 .libPaths( c( "/home/travis/R/Library" , .libPaths()))
 
-library(lattice)
-
-test_check("natmanager")
+test_check("natmanager",stop_on_failure = FALSE)

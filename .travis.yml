@@ -3,12 +3,6 @@
 language: r
 dist: bionic
 cache: packages
-r_binary_packages:
-  - devtools
-  - roxygen2
-  - rcppeigen
-  - rcpp
-  - matrix
 
 addons:
     apt:

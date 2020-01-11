@@ -9,6 +9,9 @@ r_binary_packages:
   - rcppeigen
   - rcpp 
   - matrix
-
+  
+before_install:
+  - Rscript -e 'utils::install.packages('RcppEigen')'
+  
 after_script:
   - Rscript -e 'devtools::install();devtools::test()'

@@ -1,6 +1,6 @@
 library(testthat)
 library(natmanager)
 
-library(rcppeigen)
+library('RcppEigen')
 
 test_check("natmanager")

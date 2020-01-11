@@ -13,6 +13,7 @@ r_binary_packages:
 before_install:
   - Rscript -e 'utils::install.packages("Matrix")'
   - Rscript -e 'utils::install.packages("RcppEigen")'
+  - Rscript -e 'utils::install.packages("lattice")'
   
 after_script:
   - Rscript -e 'devtools::install();devtools::test()'

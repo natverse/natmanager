@@ -11,6 +11,7 @@ r_binary_packages:
   - matrix
   
 before_install:
+  - Rscript -e 'utils::install.packages("Matrix")'
   - Rscript -e 'utils::install.packages("RcppEigen")'
   
 after_script:

@@ -13,7 +13,7 @@ test_that("installation works", {
   r["CRAN"] = "https://cloud.r-project.org"
   options(repos = r)
 
-  pkgname <- 'nat.devtools'
+  pkgname <- 'nat'
 
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)

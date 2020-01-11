@@ -23,7 +23,7 @@ test_that("installation works", {
   print(sessionInfo())
   cat('\n--Session Info end--\n')
   
-  natmanager::install(pkgname, repos = c(CRAN = "https://cran.rstudio.com"), dependencies = TRUE, lib = liblocs)
+  natmanager::install(pkgname, repos = c(CRAN = "https://cran.rstudio.com"), dependencies = F, lib = liblocs)
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 
 })

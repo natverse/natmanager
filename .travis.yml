@@ -8,10 +8,4 @@ addons:
             - libmagick++-dev
 
 before_install:
-  - Rscript -e 'utils::install.packages("Matrix")'
-  - Rscript -e 'utils::install.packages("RcppEigen")'
-  - Rscript -e 'utils::install.packages("lattice")'
-  - Rscript -e 'utils::install.packages("MASS")'
-  - Rscript -e 'utils::install.packages("mgcv")'
-  - Rscript -e 'utils::install.packages("httpuv")'
-
+  - Rscript -e 'utils::install.packages(c("Matrix","RcppEigen","lattice","MASS","mgcv","httpuv"))'

@@ -11,6 +11,14 @@ test_that("installation works", {
     skip("Skipping as Github PAT is not set")
   }
 
+  # This test requires installation and hence only run on travis..
+  skip_on_cran()
+
+  if (!nzchar(Sys.getenv('TRAVIS'))){
+    skip("Skipping as testcase will only be executed on travis")
+  }
+
+
   pkgname <- 'nat.devtools'
 
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){

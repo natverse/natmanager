@@ -1,4 +1,3 @@
-
 #liblocs <- .libPaths()[1]
 liblocs <- "/home/travis/R/Library"
 
@@ -14,8 +13,6 @@ test_that("installation works", {
   options(repos = r)
 
   pkgname <- 'nat.devtools'
-
-  .libPaths( c( "/home/travis/R/Library" , .libPaths()))
 
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)

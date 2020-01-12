@@ -18,9 +18,9 @@ test_that("installation works", {
     remove.packages(pkgname, lib = liblocs)
   }
 
-  cat('\n--Session Info start--\n')
-  print(sessionInfo())
-  cat('\n--Session Info end--\n')
+  #cat('\n--Session Info start--\n')
+  #print(sessionInfo())
+  #cat('\n--Session Info end--\n')
 
   natmanager::install(pkgname, repos = c(CRAN = "https://cran.rstudio.com"), dependencies = TRUE, lib = liblocs)
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)

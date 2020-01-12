@@ -15,5 +15,3 @@ before_install:
   - Rscript -e 'utils::install.packages("mgcv")'
   - Rscript -e 'utils::install.packages("httpuv")'
 
-after_script:
-  - Rscript -e 'devtools::install();devtools::test()'

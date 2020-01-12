@@ -1,5 +1,8 @@
-#liblocs <- .libPaths()[1]
 liblocs <- "/home/travis/R/Library"
+
+r = getOption("repos")
+r["CRAN"] = "https://cloud.r-project.org"
+options(repos = r)
 
 test_that("installation works", {
 
@@ -8,21 +11,13 @@ test_that("installation works", {
     skip("Skipping as Github PAT is not set")
   }
 
-  r = getOption("repos")
-  r["CRAN"] = "https://cloud.r-project.org"
-  options(repos = r)
-
   pkgname <- 'nat.devtools'
 
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)
   }
 
-  #cat('\n--Session Info start--\n')
-  #print(sessionInfo())
-  #cat('\n--Session Info end--\n')
-
-  natmanager::install(pkgname, repos = c(CRAN = "https://cran.rstudio.com"), dependencies = TRUE, lib = liblocs)
+  natmanager::install(pkgname, dependencies = TRUE, lib = liblocs)
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 
 })

@@ -1,13 +1,13 @@
 Package: natmanager
-Title: Install the natverse packages from scratch
-Version: 0.0.0.9000
+Title: Install the 'Natverse' Packages from Scratch
+Version: 0.1.0
 Authors@R: 
     person(given = "Sridhar",
            family = "Jagannathan",
            role = c("aut", "cre"),
            email = "j.sridharrajan@gmail.com",
            comment = c(ORCID = "0000-0002-2078-1145"))
-Description: A package tool to install natverse packages from scratch.
+Description: Enables user to install different packages in the 'natverse' repository from scratch.
 License: GPL-3
 Imports:
     gh,

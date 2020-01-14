@@ -79,7 +79,7 @@ You can install the released version of natmanager from [CRAN](https://CRAN.R-pr
 install.packages("natmanager")
 ```
 
-And the development version from [GitHub](https://github.com/) with:
+Or the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")

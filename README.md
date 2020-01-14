@@ -77,7 +77,7 @@ You can install the released version of natmanager from
 install.packages("natmanager")
 ```
 
-And the development version from [GitHub](https://github.com/) with:
+Or the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")

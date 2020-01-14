@@ -117,12 +117,13 @@ below:
 ``` r
 Error: (converted from warning) package 'xx' was built under R version y.y.y
 Execution halted
-ERROR: lazy loading failed for package 
+ERROR: lazy loading failed for package 'xx' 
 ```
 
 This occurs mainly when your `r` version is lower than what the package
 was built for (mainly `CRAN` packages are built with latest version). If
 you are sure that it is a problem due to version, then you use like
+below and retry the `install` function.
 
 ``` r
 Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS"=TRUE)

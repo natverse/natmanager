@@ -86,11 +86,16 @@ remotes::install_github("natverse/natmanager")
 
 # Usage
 
-Once installed, you can install packages inside the natverse repository
-as follows:
+Once installed, you can load/attach the package as follows:
 
 ``` r
 library('natmanager')
+```
+
+Further, you can install packages inside the natverse repository as
+follows:
+
+``` r
 install('natverse')
 ```
 
@@ -98,12 +103,30 @@ You can also look at all the repos available in the natverse
 organization as follows:
 
 ``` r
-natmanager::list_repo()
-#>  [1] "nat"                "flycircuit"         "nat.flybrains"     
-#>  [4] "nat.examples"       "nat.nblast"         "nat.templatebrains"
-#>  [7] "rcatmaid"           "elmr"               "mouselightr"       
-#> [10] "nat.jrcbrains"      "nat.h5reg"          "drvid"             
-#> [13] "neuprintr"          "neuromorphr"        "natverse"          
-#> [16] "natverse_hugo"      "natverse.github.io" "insectbrainr"      
-#> [19] "nat.devtools"       "fishatlas"          "natmanager"
+list_repo()
 ```
+
+# FAQs
+
+1.  On using `install` fuction from the package to install a `natverse`
+    repository, I’m getting an error like
+below:
+
+<!-- end list -->
+
+``` r
+Error: (converted from warning) package 'xx' was built under R version y.y.y
+Execution halted
+ERROR: lazy loading failed for package 
+```
+
+This occurs mainly when your `r` version is lower than what the package
+was built for (mainly `CRAN` packages are built with latest version). If
+you are sure that it is a problem due to version, then you use like
+
+``` r
+Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS"=TRUE)
+```
+
+See further discussion
+[here](https://github.com/r-lib/remotes/issues/403)

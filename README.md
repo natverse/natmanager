@@ -108,7 +108,7 @@ list_repo()
 
 # FAQs
 
-1.  On using `install` fuction from the package to install a `natverse`
+1.  On using `install` function from the package to install a `natverse`
     repository, I’m getting an error like
 below:
 

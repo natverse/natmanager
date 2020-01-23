@@ -91,23 +91,20 @@ remotes::install_github("natverse/natmanager")
 
 # Usage
 
-Once installed, you can load/attach the package as follows:
+Once installed, you can install packages inside the natverse repository as follows:
 
 ```r
-library('natmanager')
-```
-
-Further, you can install packages inside the natverse repository as follows:
-
-```r
-install('natverse')
+natmanager::install('natverse')
 ```
 
 You can also look at all the repos available in the natverse organization as follows:
 
 ```r
-list_repo()
+natmanager::list_repo()
 ```
+
+(Since you will rarely use natmanager there is probably no need to *attach* the
+package)
 
 # FAQs
 

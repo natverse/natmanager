@@ -26,28 +26,6 @@ The goal of natmanager is to handle the installation of all packages inside the 
 # Prerequisites
 To install this package you need to have `R` and `RStudio` installed. The detailed instructions per operating system are given below.
 
-### Linux
-1. Install `R`, in terminal type below:
-```{r, engine = 'bash', eval = FALSE}
-sudo apt-get install libopenblas-base r-base
-```
-
-2. Install `RStudio`, in terminal type below:
-
-2. Install `R-studio`, in terminal type below:
-```{r, engine = 'bash', eval = FALSE}
-sudo apt-get install gdebi
-cd ~/Downloads
-wget https://download1.rstudio.org/rstudio-xenial-1.1.419-amd64.deb
-sudo gdebi rstudio-xenial-1.1.419-amd64.deb
-```
-
-
-3. Start `RStudio`, in terminal type below:
-```{r, engine = 'bash', eval = FALSE}
-rstudio
-```
-
 ### Mac OS X
 1. Install `R` from here:
 [r-installation](https://cloud.r-project.org/bin/macosx/)
@@ -69,6 +47,30 @@ rstudio
 
 
 3. Start `RStudio` from Programs menu
+
+### Linux
+1. Install `R`. For Debian/Ubuntu based systems type the following in the terminal:
+```{r, engine = 'bash', eval = FALSE}
+sudo apt-get install libopenblas-base r-base
+```
+
+2. Install `RStudio`, in terminal type below:
+
+Go to the [RStudio downloads page](https://www.rstudio.com/products/rstudio/download/#download) to 
+identify the latest release for your distribution. For Ubuntu 16, the current
+installation procedure is as follows
+```{r, engine = 'bash', eval = FALSE}
+sudo apt-get install gdebi
+cd ~/Downloads # or wherever you like to download things
+wget https://download1.rstudio.org/desktop/xenial/amd64/rstudio-1.2.1578-amd64.deb
+sudo gdebi rstudio-1.2.1578-amd64.deb
+```
+
+
+3. Start `RStudio`, in terminal type below:
+```{r, engine = 'bash', eval = FALSE}
+rstudio
+```
 
 
 # Installation

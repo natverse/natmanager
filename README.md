@@ -17,7 +17,9 @@ inside the natverse repository.
 # Prerequisite
 
 To install this package you need to have `R` and `R-studio` installed.
-The detailed instructions per operating system are given below.
+The detailed instructions per operating system are given below. Further
+you would also need a valid GitHub account to install packages inside
+the natverse repository, see [Usage](#usage)
 
 ### Linux
 

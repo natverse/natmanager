@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 The goal of natmanager is to handle the installation of all packages inside the natverse repository.
 
 # Prerequisite
-To install this package you need to have `R` and `R-studio` installed. The detailed instructions per operating system are given below.
+To install this package you need to have `R` and `R-studio` installed. The detailed instructions per operating system are given below. Further you would also need a valid GitHub account to install packages inside the natverse repository, see  [Usage](#usage)
 
 ### Linux
 1. Install `r`, in terminal type below:
@@ -87,7 +87,7 @@ remotes::install_github("natverse/natmanager")
 ```
 
 
-# Usage
+# Usage {#usage}
 
 Once installed, you can load/attach the package as follows:
 

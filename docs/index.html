@@ -11,7 +11,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Install the Natverse Packages from Scratch">
-<meta property="og:description" content="Enables user to install different packages in the natverse repository from scratch.">
+<meta property="og:description" content="Enables user to install different packages in the natverse repository from scratch. 
+    The rationale behind the utility of this package is as follows. The suite of packages encompassed by `natverse` 
+    helps in analysing neuroanatomical data ranging from a variety of species like the nematode worm to the mouse brain.
+    The principal problem while installing the core `natverse` package is that it installs a lot of its friends 
+    (dependencies, imports etc.) that are required for its proper functioning. Most of these friends are development 
+    packages (which are also quite heavy) located in GITHUB. This in turn makes the installation of `natverse` to 
+    have a lot of API calls to the GITHUB, however GITHUB has a limit of 60 requests per hour for unauthenticated 
+    requests. Hence for the unauthenticated user, the installation would fail if it was done directly.
+    The proper way to fix this problem would be to set the GITHUB_PAT to make the request authenticated.
+    Hence, to make the installation of `natverse` easier from the end user perspective (who are not well versed in R 
+    or in GITHUB), we have developed this package. This package will act as a wrapper that will set the  GITHUB_PAT 
+    and will handhold the user to initiate the installation of the `natverse` packages.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -47,7 +58,14 @@
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/natverse/natmanager">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -67,46 +85,47 @@
 
 <p>The goal of natmanager is to handle the installation of all packages inside the natverse repository.</p>
 </div>
-<div id="prerequisite" class="section level1">
+<div id="prerequisites" class="section level1">
 <h1 class="hasAnchor">
-<a href="#prerequisite" class="anchor"></a>Prerequisite</h1>
-<p>To install this package you need to have <code>R</code> and <code>R-studio</code> installed. The detailed instructions per operating system are given below.</p>
-<div id="linux" class="section level3">
-<h3 class="hasAnchor">
-<a href="#linux" class="anchor"></a>Linux</h3>
-<ol>
-<li>Install <code>r</code>, in terminal type below:</li>
-</ol>
-<!-- end list --><div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt-get install libopenblas-base r-base</a></code></pre></div>
-<ol>
-<li>Install <code>R-studio</code>, in terminal type below:</li>
-</ol>
-<!-- end list --><div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">sudo</span> apt-get install gdebi</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="bu">cd</span> ~/Downloads</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="fu">wget</span> https://download1.rstudio.org/rstudio-xenial-1.1.419-amd64.deb</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="fu">sudo</span> gdebi rstudio-xenial-1.1.419-amd64.deb</a></code></pre></div>
-<ol>
-<li>Start <code>R-studio</code>, in terminal type below:</li>
-</ol>
-<!-- end list --><div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">rstudio</span></a></code></pre></div>
-</div>
+<a href="#prerequisites" class="anchor"></a>Prerequisites</h1>
+<p>To install this package you need to have <code>R</code> and <code>RStudio</code> installed. The detailed instructions per operating system are given below.</p>
 <div id="mac-os-x" class="section level3">
 <h3 class="hasAnchor">
 <a href="#mac-os-x" class="anchor"></a>Mac OS X</h3>
 <ol>
-<li><p>Install <code>r</code> from here: <a href="http://cran.cnr.berkeley.edu/bin/macosx/">r-installation</a></p></li>
-<li><p>Install <code>R-studio</code>, from here: <a href="https://rstudio.com/products/rstudio/download/#download">R-studio-installation</a></p></li>
-<li><p>Start <code>R-studio</code> from Launchpad</p></li>
+<li><p>Install <code>R</code> from here: <a href="https://cloud.r-project.org/bin/macosx/">r-installation</a></p></li>
+<li><p>Install <code>RStudio</code>, from here: <a href="https://rstudio.com/products/rstudio/download/#download">RStudio-installation</a></p></li>
+<li><p>Start <code>RStudio</code> from Launchpad</p></li>
 </ol>
 </div>
 <div id="windows" class="section level3">
 <h3 class="hasAnchor">
 <a href="#windows" class="anchor"></a>Windows</h3>
 <ol>
-<li><p>Install <code>r</code> from here: <a href="http://cran.cnr.berkeley.edu/bin/windows/base/">r-installation</a></p></li>
-<li><p>Install <code>R-studio</code>, for Windows from here: <a href="https://rstudio.com/products/rstudio/download/#download">R-studio-installation</a></p></li>
-<li><p>Start <code>R-studio</code> from Programs menu</p></li>
+<li><p>Install <code>R</code> from here: <a href="https://cloud.r-project.org/bin/windows/base/">r-installation</a></p></li>
+<li><p>Install <code>RStudio</code>, for Windows from here: <a href="https://rstudio.com/products/rstudio/download/#download">RStudio-installation</a></p></li>
+<li><p>Start <code>RStudio</code> from Programs menu</p></li>
 </ol>
+</div>
+<div id="linux" class="section level3">
+<h3 class="hasAnchor">
+<a href="#linux" class="anchor"></a>Linux</h3>
+<ol>
+<li>Install <code>R</code>. For Debian/Ubuntu based systems type the following in the terminal:</li>
+</ol>
+<!-- end list --><div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt-get install libopenblas-base r-base</a></code></pre></div>
+<ol>
+<li>Install <code>RStudio</code>, in terminal type below:</li>
+</ol>
+<p>Go to the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio downloads page</a> to identify the latest release for your distribution. For Ubuntu 16, the current installation procedure is as follows</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">sudo</span> apt-get install gdebi</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="bu">cd</span> ~/Downloads <span class="co"># or wherever you like to download things</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="fu">wget</span> https://download1.rstudio.org/desktop/xenial/amd64/rstudio-1.2.1578-amd64.deb</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="fu">sudo</span> gdebi rstudio-1.2.1578-amd64.deb</a></code></pre></div>
+<ol>
+<li>Start <code>RStudio</code>, in terminal type below:</li>
+</ol>
+<!-- end list --><div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">rstudio</span></a></code></pre></div>
 </div>
 </div>
 <div id="installation" class="section level1">
@@ -121,31 +140,39 @@
 <div id="usage" class="section level1">
 <h1 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h1>
-<p>Once installed, you can load/attach the package as follows:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">'natmanager'</span>)</a></code></pre></div>
-<p>Further, you can install packages inside the natverse repository as follows:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/install.html">install</a></span>(<span class="st">'natverse'</span>)</a></code></pre></div>
+<p>Once installed, you can install packages inside the natverse repository as follows:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">natmanager<span class="op">::</span><span class="kw">install</span>(<span class="st">'natverse'</span>)</a></code></pre></div>
 <p>You can also look at all the repos available in the natverse organization as follows:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="reference/list_repo.html">list_repo</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">natmanager<span class="op">::</span><span class="kw">list_repo</span>()</a></code></pre></div>
+<p>(Since you will rarely use natmanager there is probably no need to <em>attach</em> the package)</p>
 </div>
 <div id="faqs" class="section level1">
 <h1 class="hasAnchor">
 <a href="#faqs" class="anchor"></a>FAQs</h1>
 <ol>
-<li>On using <code>install</code> fuction from the package to install a <code>natverse</code> repository, I’m getting an error like below:</li>
+<li>On using <code>install</code> function from the package to install a <code>natverse</code> repository, I’m getting an error like below:</li>
 </ol>
-<!-- end list --><div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">Error<span class="op">:</span><span class="st"> </span>(converted from warning) package <span class="st">'xx'</span> was built under R version y.y.y</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">Execution halted</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">ERROR<span class="op">:</span><span class="st"> </span>lazy loading failed <span class="cf">for</span> package <span class="st">'xx'</span> </a></code></pre></div>
-<p>This occurs mainly when your <code>r</code> version is lower than what the package was built for (mainly <code>CRAN</code> packages are built with latest version). If you are sure that it is a problem due to version, then you use like below and retry the <code>install</code> function.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="st">"R_REMOTES_NO_ERRORS_FROM_WARNINGS"</span>=<span class="ot">TRUE</span>)</a></code></pre></div>
+<!-- end list --><div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">Error<span class="op">:</span><span class="st"> </span>(converted from warning) package <span class="st">'xx'</span> was built under R version y.y.y</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">Execution halted</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">ERROR<span class="op">:</span><span class="st"> </span>lazy loading failed <span class="cf">for</span> package <span class="st">'xx'</span> </a></code></pre></div>
+<p>This occurs mainly when your <code>R</code> version is lower than what the package was built for (mainly <code>CRAN</code> packages are built with latest version). If you are sure that it is a problem due to version, then you use like below and retry the <code>install</code> function.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="st">"R_REMOTES_NO_ERRORS_FROM_WARNINGS"</span>=<span class="ot">TRUE</span>)</a></code></pre></div>
 <p>See further discussion <a href="https://github.com/r-lib/remotes/issues/403">here</a></p>
 </div>
 
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/natverse/natmanager">https://​github.com/​natverse/​natmanager</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/natverse/natmanager/issues">https://​github.com/​natverse/​natmanager/​issues</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>

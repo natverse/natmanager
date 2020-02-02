@@ -53,7 +53,7 @@ rstudio
 ### Mac OS X
 
 1.  Install `r` from here:
-    [r-installation](http://cran.cnr.berkeley.edu/bin/macosx/)
+    [r-installation](http://cloud.r-project.org/bin/macosx/)
 
 2.  Install `R-studio`, from here:
     [R-studio-installation](https://rstudio.com/products/rstudio/download/#download)
@@ -63,7 +63,7 @@ rstudio
 ### Windows
 
 1.  Install `r` from here:
-    [r-installation](http://cran.cnr.berkeley.edu/bin/windows/base/)
+    [r-installation](http://cloud.r-project.org/bin/windows/base/)
 
 2.  Install `R-studio`, for Windows from here:
     [R-studio-installation](https://rstudio.com/products/rstudio/download/#download)

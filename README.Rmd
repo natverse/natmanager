@@ -23,30 +23,8 @@ knitr::opts_chunk$set(
 
 The goal of natmanager is to handle the installation of all packages inside the natverse repository.
 
-# Prerequisite
-To install this package you need to have `R` and `RStudio` installed. The detailed instructions per operating system are given below. Further you would also need a valid GitHub account to install packages inside the natverse repository, see  [Usage](#usage)
-
-### Linux
-1. Install `r`, in terminal type below:
-```{r, engine = 'bash', eval = FALSE}
-sudo apt-get install libopenblas-base r-base
-```
-
-
-
-2. Install `RStudio`, in terminal type below:
-```{r, engine = 'bash', eval = FALSE}
-sudo apt-get install gdebi
-cd ~/Downloads
-wget https://download1.rstudio.org/rstudio-xenial-1.1.419-amd64.deb
-sudo gdebi rstudio-xenial-1.1.419-amd64.deb
-```
-
-
-3. Start `RStudio`, in terminal type below:
-```{r, engine = 'bash', eval = FALSE}
-rstudio
-```
+# Prerequisites
+To install this package you need to have `R` and `RStudio` installed. Detailed instructions for each operating system are given below. You will also need a valid GitHub account to install the full suite of natverse packages, see  [Usage](#usage)
 
 ### Mac OS X
 1. Install `r` from here:
@@ -70,6 +48,26 @@ rstudio
 
 3. Start `RStudio` from Programs menu
 
+### Linux
+1. Install `r`, in terminal type below:
+```{r, engine = 'bash', eval = FALSE}
+sudo apt-get install libopenblas-base r-base
+```
+
+
+2. Install `RStudio`, in terminal type below:
+```{r, engine = 'bash', eval = FALSE}
+sudo apt-get install gdebi
+cd ~/Downloads
+wget https://download1.rstudio.org/rstudio-xenial-1.1.419-amd64.deb
+sudo gdebi rstudio-xenial-1.1.419-amd64.deb
+```
+
+
+3. Start `RStudio`, in terminal type below:
+```{r, engine = 'bash', eval = FALSE}
+rstudio
+```
 
 # Installation
 

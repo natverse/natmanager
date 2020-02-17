@@ -14,12 +14,32 @@ status](https://travis-ci.org/natverse/natmanager.svg?branch=master)](https://tr
 The goal of natmanager is to handle the installation of all packages
 inside the natverse repository.
 
-# Prerequisite
+# Prerequisites
 
 To install this package you need to have `R` and `RStudio` installed.
-The detailed instructions per operating system are given below. Further
-you would also need a valid GitHub account to install packages inside
-the natverse repository, see [Usage](#usage)
+Detailed instructions for each operating system are given below. You
+will also need a valid GitHub account to install the full suite of
+natverse packages, see [Usage](#usage)
+
+### Mac OS X
+
+1.  Install `r` from here:
+    [r-installation](http://cloud.r-project.org/bin/macosx/)
+
+2.  Install `RStudio`, from here:
+    [RStudio-installation](https://rstudio.com/products/rstudio/download/#download)
+
+3.  Start `RStudio` from Launchpad
+
+### Windows
+
+1.  Install `r` from here:
+    [r-installation](http://cloud.r-project.org/bin/windows/base/)
+
+2.  Install `RStudio`, for Windows from here:
+    [RStudio-installation](https://rstudio.com/products/rstudio/download/#download)
+
+3.  Start `RStudio` from Programs menu
 
 ### Linux
 
@@ -49,26 +69,6 @@ sudo gdebi rstudio-xenial-1.1.419-amd64.deb
 ``` bash
 rstudio
 ```
-
-### Mac OS X
-
-1.  Install `r` from here:
-    [r-installation](http://cloud.r-project.org/bin/macosx/)
-
-2.  Install `RStudio`, from here:
-    [RStudio-installation](https://rstudio.com/products/rstudio/download/#download)
-
-3.  Start `RStudio` from Launchpad
-
-### Windows
-
-1.  Install `r` from here:
-    [r-installation](http://cloud.r-project.org/bin/windows/base/)
-
-2.  Install `RStudio`, for Windows from here:
-    [RStudio-installation](https://rstudio.com/products/rstudio/download/#download)
-
-3.  Start `RStudio` from Programs menu
 
 # Installation
 

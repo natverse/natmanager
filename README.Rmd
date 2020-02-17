@@ -86,6 +86,10 @@ Or the development version from [GitHub](https://github.com/) with:
 remotes::install_github("natverse/natmanager")
 ```
 
+Step by Step illustration of installation
+
+![](docs/natmanager.gif)
+
 
 # Usage {#usage}
 
@@ -106,6 +110,8 @@ You can also look at all the repos available in the natverse organization as fol
 ```r
 list_repo()
 ```
+
+
 
 # FAQs
 

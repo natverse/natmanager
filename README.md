@@ -94,7 +94,7 @@ Video format:
 
 Document format:
 
-![Word](docs/installation_steps.html)
+![doc](docs/installation_steps.pdf)
 
 # Usage
 

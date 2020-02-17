@@ -95,7 +95,7 @@ Video format:
 
 Document format:
 
-[pdf](docs/installation_steps.pdf)
+[word](docs/installation_steps.md)
 
 # Usage {#usage}
 

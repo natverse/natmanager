@@ -86,9 +86,15 @@ Or the development version from [GitHub](https://github.com/) with:
 remotes::install_github("natverse/natmanager")
 ```
 
-Step by Step illustration of installation
+#### Step by Step illustration of installation
 
-![](docs/natmanager.gif)
+Video format:
+
+![GIF](docs/natmanager.gif)
+
+Document format:
+
+![Word](docs/installation_steps.html)
 
 # Usage
 

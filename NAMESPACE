@@ -2,4 +2,5 @@
 
 export(install)
 export(list_repo)
+export(update)
 importFrom(utils,install.packages)

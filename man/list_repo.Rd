@@ -2,22 +2,22 @@
 % Please edit documentation in R/utils.R
 \name{list_repo}
 \alias{list_repo}
-\title{List all the repos inside a particular organization inside the natverse repository.}
+\title{List all the repos inside a particular GitHub organisation}
 \usage{
 list_repo(orgname = "natverse")
 }
 \arguments{
-\item{orgname}{Name of the organization in github to list repositories from.}
+\item{orgname}{Name of the GitHub organization}
 }
 \value{
-List of repositories
+Character vector of repository names
 }
 \description{
-This will list all the repositories inside the `natverse` organization.
+\description by default this will list all the repositories inside the
+`natverse` organization.
 }
 \examples{
-\dontrun{
-library('natmanager')
+\donttest{
 list_repo()
 }
 }

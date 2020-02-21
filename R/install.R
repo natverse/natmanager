@@ -1,9 +1,11 @@
-#' Install packages inside the natverse repository.
+#' Install packages from the natverse GitHub repository.
 #'
-#' This will check to see if the GITHUB_PAT is set and will provide instructions to the user to set it.
-#' Further if the GITHUB_PAT is set, it will start installing the dependencies of the `natverse` package.
+#' This will check to see if the GITHUB_PAT is set and will provide instructions
+#' to the user to set it. Further if the GITHUB_PAT is set, it will start
+#' installing the dependencies of the `natverse` package.
 #' @param pkgname Package name inside the `natverse` repository.
-#' @param dependencies Which dependencies you want to install see \code{\link[remotes]{install_github}}.
+#' @param dependencies Which dependencies you want to install see
+#'   \code{\link[remotes]{install_github}}.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}.
 #' @importFrom utils install.packages
 #' @export
@@ -12,10 +14,15 @@
 #' library('natmanager')
 #' install('natverse')
 #' }
-install <- function(pkgname = 'natverse',dependencies=TRUE, ...) {
-
-  if(!requireNamespace('remotes', quietly=TRUE)) utils::install.packages('remotes')
-  if(!requireNamespace('usethis', quietly=TRUE)) utils::install.packages('usethis')
-  remotes::install_github(paste0("natverse/",pkgname),auth_token = Sys.getenv('GITHUB_PAT'),
-                          dependencies=dependencies, ...)
+install <- function(pkgname = 'natverse', dependencies = TRUE, ...) {
+  if (!requireNamespace('remotes', quietly = TRUE))
+    utils::install.packages('remotes')
+  if (!requireNamespace('usethis', quietly = TRUE))
+    utils::install.packages('usethis')
+  remotes::install_github(
+    paste0("natverse/", pkgname),
+    auth_token = Sys.getenv('GITHUB_PAT'),
+    dependencies = dependencies,
+    ...
+  )
 }

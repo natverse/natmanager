@@ -2,21 +2,26 @@
 % Please edit documentation in R/update.R
 \name{update}
 \alias{update}
-\title{This will update the `natmanager` package itself.}
+\title{Update the `natmanager` package itself.}
 \usage{
 update(source = c("GITHUB", "CRAN"), ...)
 }
 \arguments{
-\item{source}{Location to look for updating the package from, can be 'GITHUB' or 'CRAN'.}
+\item{source}{Location to check package updates. Defaults to GITHUB since
+this may well have a newer version than the CRAN packgae repository.}
 
-\item{...}{extra arguments to pass to \code{\link[remotes]{install_github}} or \code{\link[remotes]{install_cran}}.}
+\item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}
+or \code{\link[remotes]{install_cran}}.}
 }
 \description{
-This will update the `natmanager` package itself.
+Update the `natmanager` package itself.
 }
 \examples{
 \dontrun{
 library('natmanager')
 update()
 }
+}
+\seealso{
+\code{\link{install}}
 }

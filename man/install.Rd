@@ -2,20 +2,22 @@
 % Please edit documentation in R/install.R
 \name{install}
 \alias{install}
-\title{Install packages inside the natverse repository.}
+\title{Install packages from the natverse GitHub repository.}
 \usage{
 install(pkgname = "natverse", dependencies = TRUE, ...)
 }
 \arguments{
 \item{pkgname}{Package name inside the `natverse` repository.}
 
-\item{dependencies}{Which dependencies you want to install see \code{\link[remotes]{install_github}}.}
+\item{dependencies}{Which dependencies you want to install see
+\code{\link[remotes]{install_github}}.}
 
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
 }
 \description{
-This will check to see if the GITHUB_PAT is set and will provide instructions to the user to set it.
-Further if the GITHUB_PAT is set, it will start installing the dependencies of the `natverse` package.
+This will check to see if the GITHUB_PAT is set and will provide instructions
+to the user to set it. Further if the GITHUB_PAT is set, it will start
+installing the dependencies of the `natverse` package.
 }
 \examples{
 \dontrun{

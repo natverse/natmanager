@@ -2,5 +2,5 @@
 
 export(install)
 export(list_repo)
-export(update)
+export(selfupdate)
 importFrom(utils,install.packages)

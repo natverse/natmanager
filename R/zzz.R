@@ -13,11 +13,6 @@
   } else{
     natmessage(status = 'Set', pkgname)
   }
-
-  #Set the option for install, such that warnings from remotes package are not converted to errors..
-  #For details see here: https://github.com/r-lib/remotes/issues/403
-
-  Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
 }
 
 

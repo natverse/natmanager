@@ -30,7 +30,7 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
 github_version <- function(repo='natverse/natmanager') {
   tryCatch({
     u=sprintf('https://raw.githubusercontent.com/%s/master/DESCRIPTION', repo)
-    con <- curl::curl(u, open='r')
+    con <- curl::curl(u)
     on.exit(close(con))
     ver.str=read.dcf(con, fields = 'Version')
     package_version(ver.str)

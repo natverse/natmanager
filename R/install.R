@@ -15,8 +15,13 @@
 #' install('natverse')
 #' }
 install <- function(pkgname = 'natverse', dependencies = TRUE, ...) {
+  repos <- paste0("natverse/", pkgname)
+
+  # Update if necessary
+  smartselfupdate()
+
   with_envvars(remotes::install_github(
-    paste0("natverse/", pkgname),
+    repos,
     auth_token = Sys.getenv('GITHUB_PAT'),
     dependencies = dependencies,
     ...
@@ -31,3 +36,4 @@ with_envvars <- function(expr) {
   on.exit(Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = old))
   force(expr)
 }
+

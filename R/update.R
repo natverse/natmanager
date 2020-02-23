@@ -46,7 +46,7 @@ github_newer <- function() {
   remote>local
 }
 
-smartupdate <- function(...) {
+smartselfupdate <- function(...) {
   if (isTRUE(github_newer()) && interactive()) {
     res = utils::askYesNo(
       paste0("There is a newer version of natmanager. Would you like to update\n",

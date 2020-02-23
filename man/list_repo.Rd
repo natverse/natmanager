@@ -13,8 +13,8 @@ list_repo(orgname = "natverse")
 Character vector of repository names
 }
 \description{
-\description by default this will list all the repositories inside the
-`natverse` organization.
+by default this will list all the repositories inside the
+  `natverse` organization.
 }
 \examples{
 \donttest{

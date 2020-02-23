@@ -1,7 +1,7 @@
 #' List all the repos inside a particular GitHub organisation
 #'
-#' \description by default this will list all the repositories inside the
-#' `natverse` organization.
+#' @description by default this will list all the repositories inside the
+#'   `natverse` organization.
 #'
 #' @param orgname Name of the GitHub organization
 #' @return Character vector of repository names

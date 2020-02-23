@@ -15,10 +15,6 @@
 #' install('natverse')
 #' }
 install <- function(pkgname = 'natverse', dependencies = TRUE, ...) {
-  if (!requireNamespace('remotes', quietly = TRUE))
-    utils::install.packages('remotes')
-  if (!requireNamespace('usethis', quietly = TRUE))
-    utils::install.packages('usethis')
   with_envvars(remotes::install_github(
     paste0("natverse/", pkgname),
     auth_token = Sys.getenv('GITHUB_PAT'),

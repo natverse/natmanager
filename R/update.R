@@ -1,7 +1,8 @@
 #' Update the `natmanager` package itself.
 #'
-#' @param source Location to check package updates. Defaults to GITHUB since
-#'   this may well have a newer version than the CRAN packgae repository.
+#' @param source Location from which to obtain package updates. Defaults to
+#'   GITHUB since this may well have a newer version than the CRAN packgae
+#'   repository.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}
 #'   or \code{\link[remotes]{install_cran}}.
 #' @export

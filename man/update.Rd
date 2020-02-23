@@ -7,8 +7,9 @@
 update(source = c("GITHUB", "CRAN"), ...)
 }
 \arguments{
-\item{source}{Location to check package updates. Defaults to GITHUB since
-this may well have a newer version than the CRAN packgae repository.}
+\item{source}{Location from which to obtain package updates. Defaults to
+GITHUB since this may well have a newer version than the CRAN packgae
+repository.}
 
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}
 or \code{\link[remotes]{install_cran}}.}

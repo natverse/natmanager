@@ -5,7 +5,9 @@
 #'   packgae repository.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}
 #'   or \code{\link[remotes]{install_cran}}.
-#'   @param dependencies.upgrade See
+#' @param dependencies.upgrade Whether to ask to install dependencies of
+#'   natmanager. See the \code{upgrade} argument of
+#'   \code{\link[remotes]{install_github}} for details.
 #' @export
 #' @seealso \code{\link{install}}
 #' @examples

@@ -27,10 +27,9 @@ Imports:
     utils,
     remotes,
     usethis,
+    curl
 Suggests: 
     testthat (>= 2.1.0),
-    withr,
-    curl,
     knitr
 Encoding: UTF-8
 Language: en-GB

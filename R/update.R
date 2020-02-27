@@ -18,6 +18,8 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
                        upgrade.dependencies='always', ...) {
   source <- match.arg(source)
 
+  oldVersion=packageVersion('natmanager')
+
   with_envvars({
     if (source == 'CRAN') {
       remotes::install_cran('natmanager', ...)
@@ -27,12 +29,16 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
     }
   })
 
-  if(isTRUE(Sys.getenv("RSTUDIO")=="1")) {
-    res=utils::askYesNo("Can I restart R? Then run natmanager::install() again!")
-    if (isTRUE(res))
-      rstudioapi::restartSession()
+  newVersion=packageVersion('natmanager')
+
+  if(newVersion>oldVersion) {
+    if(isTRUE(Sys.getenv("RSTUDIO")=="1")) {
+      res=utils::askYesNo("Can I restart R? Then run natmanager::install() again!")
+      if (isTRUE(res))
+        rstudioapi::restartSession()
+    }
+    stop("You must restart R before running natmanager::install() again!")
   }
-  stop("You must restart R before running natmanager::install() again!")
 }
 
 

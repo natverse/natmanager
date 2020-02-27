@@ -23,7 +23,7 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
       remotes::install_cran('natmanager', ...)
     } else {
       remotes::install_github('natverse/natmanager',
-                              upgrade=dependencies.upgrade, ...)
+                              upgrade=upgrade.dependencies, ...)
     }
   })
 }

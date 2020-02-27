@@ -34,6 +34,7 @@
 #' # Full "batteries included" installation with all packages
 #' natmanager::install('natverse')
 #' }
+#' @importFrom usethis ui_info
 install <- function(collection = c('core', 'natverse'), dependencies = TRUE,
                     upgrade.dependencies='always', ...) {
 
@@ -50,7 +51,7 @@ install <- function(collection = c('core', 'natverse'), dependencies = TRUE,
   smartselfupdate()
 
   # We should be able to install core packages without the pat
-  if(collection!='core')
+  if(collection=='core')
     check_pat()
 
   with_envvars(remotes::install_github(
@@ -59,6 +60,13 @@ install <- function(collection = c('core', 'natverse'), dependencies = TRUE,
     upgrade = upgrade.dependencies,
     ...
   ))
+
+  if(collection=='core') {
+    ui_todo("To install the full natverse in future do {ui_code('natmanager::install(\"natverse\")')}")
+    ui_info("Load the core nat package with {ui_code('library(nat)')}")
+  } else {
+    ui_info("Load the full natverse with {ui_code('library(natverse)')}")
+  }
 }
 
 with_envvars <- function(expr) {

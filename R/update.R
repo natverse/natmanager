@@ -38,12 +38,16 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
       if (isTRUE(res)) {
         message("Thank you! You can run natmanager::install() after restarting!")
         rstudioapi::restartSession()
+      } else{
+        stop("OK! But you must restart R before running natmanager::install() again!",
+             call. = FALSE)
       }
+    } else {
+      stop("You must restart R before running natmanager::install() again!",
+           call. = FALSE)
     }
-    stop("You must restart R before running natmanager::install() again!")
   }
 }
-
 
 github_version <- function(repo='natverse/natmanager') {
   tryCatch({

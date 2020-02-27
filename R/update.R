@@ -14,6 +14,7 @@
 #' \dontrun{
 #' natmanager::selfupdate()
 #' }
+#' @importFrom utils browseURL packageVersion
 selfupdate <- function(source = c('GITHUB', 'CRAN'),
                        upgrade.dependencies='always', ...) {
   source <- match.arg(source)

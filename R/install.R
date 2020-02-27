@@ -8,13 +8,14 @@
 #'   \code{\link[remotes]{install_github}}.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}.
 #' @importFrom utils install.packages
+#' @inheritParams selfupdate
 #' @export
 #' @examples
 #' \dontrun{
-#' library('natmanager')
-#' install('natverse')
+#' natverse::install()
+#'
 #' }
-install <- function(pkgname = 'natverse', dependencies = TRUE, ...) {
+install <- function(pkgname = 'natverse', dependencies = TRUE, confirm.dependencies.upgrade='never', ...) {
   repos <- paste0("natverse/", pkgname)
 
   # Update if necessary
@@ -24,6 +25,7 @@ install <- function(pkgname = 'natverse', dependencies = TRUE, ...) {
     repos,
     auth_token = Sys.getenv('GITHUB_PAT'),
     dependencies = dependencies,
+    ask=confirm.dependencies.upgrade,
     ...
   ))
 }

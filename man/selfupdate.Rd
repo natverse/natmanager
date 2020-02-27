@@ -4,16 +4,21 @@
 \alias{selfupdate}
 \title{Update the `natmanager` package itself.}
 \usage{
-selfupdate(source = c("GITHUB", "CRAN"), dependencies.upgrade = "never", ...)
+selfupdate(
+  source = c("GITHUB", "CRAN"),
+  confirm.dependencies.upgrade = "never",
+  ...
+)
 }
 \arguments{
 \item{source}{Location from which to obtain a newer version of natmanager.
 Defaults to GITHUB since this may well have a newer version than the CRAN
 packgae repository.}
 
-\item{dependencies.upgrade}{Whether to ask to install dependencies of
+\item{confirm.dependencies.upgrade}{Whether to ask to install dependencies of
 natmanager. See the \code{upgrade} argument of
-\code{\link[remotes]{install_github}} for details.}
+\code{\link[remotes]{install_github}} for details. The default will never
+ask to upgrade dependencies but just go ahead and do this is as necessary.}
 
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}
 or \code{\link[remotes]{install_cran}}.}

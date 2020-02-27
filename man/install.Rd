@@ -4,13 +4,23 @@
 \alias{install}
 \title{Install packages from the natverse GitHub repository.}
 \usage{
-install(pkgname = "natverse", dependencies = TRUE, ...)
+install(
+  pkgname = "natverse",
+  dependencies = TRUE,
+  confirm.dependencies.upgrade = "never",
+  ...
+)
 }
 \arguments{
 \item{pkgname}{Package name inside the `natverse` repository.}
 
 \item{dependencies}{Which dependencies you want to install see
 \code{\link[remotes]{install_github}}.}
+
+\item{confirm.dependencies.upgrade}{Whether to ask to install dependencies of
+natmanager. See the \code{upgrade} argument of
+\code{\link[remotes]{install_github}} for details. The default will never
+ask to upgrade dependencies but just go ahead and do this is as necessary.}
 
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
 }
@@ -21,7 +31,7 @@ installing the dependencies of the `natverse` package.
 }
 \examples{
 \dontrun{
-library('natmanager')
-install('natverse')
+natverse::install()
+
 }
 }

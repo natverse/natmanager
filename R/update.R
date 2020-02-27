@@ -5,9 +5,10 @@
 #'   packgae repository.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}
 #'   or \code{\link[remotes]{install_cran}}.
-#' @param dependencies.upgrade Whether to ask to install dependencies of
+#' @param confirm.dependencies.upgrade Whether to ask to install dependencies of
 #'   natmanager. See the \code{upgrade} argument of
-#'   \code{\link[remotes]{install_github}} for details.
+#'   \code{\link[remotes]{install_github}} for details. The default will never
+#'   ask to upgrade dependencies but just go ahead and do this is as necessary.
 #' @export
 #' @seealso \code{\link{install}}
 #' @examples
@@ -15,7 +16,7 @@
 #' natmanager::selfupdate()
 #' }
 selfupdate <- function(source = c('GITHUB', 'CRAN'),
-                       dependencies.upgrade='never', ...) {
+                       confirm.dependencies.upgrade='never', ...) {
   source <- match.arg(source)
 
   with_envvars({

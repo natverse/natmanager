@@ -25,7 +25,7 @@ install <- function(pkgname = 'natverse', dependencies = TRUE, confirm.dependenc
     repos,
     auth_token = Sys.getenv('GITHUB_PAT'),
     dependencies = dependencies,
-    ask=confirm.dependencies.upgrade,
+    upgrade = confirm.dependencies.upgrade,
     ...
   ))
 }

@@ -7,7 +7,7 @@
 install(
   pkgname = "natverse",
   dependencies = TRUE,
-  confirm.dependencies.upgrade = "never",
+  upgrade.dependencies = "always",
   ...
 )
 }
@@ -17,10 +17,9 @@ install(
 \item{dependencies}{Which dependencies you want to install see
 \code{\link[remotes]{install_github}}.}
 
-\item{confirm.dependencies.upgrade}{Whether to ask to install dependencies of
-natmanager. See the \code{upgrade} argument of
-\code{\link[remotes]{install_github}} for details. The default will never
-ask to upgrade dependencies but just go ahead and do this is as necessary.}
+\item{upgrade.dependencies}{Whether to install dependencies of natmanager.
+See the \code{upgrade} argument of \code{\link[remotes]{install_github}}
+for details. The default will go ahead and always do this is as necessary.}
 
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
 }

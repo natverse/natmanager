@@ -15,7 +15,8 @@
 #' natverse::install()
 #'
 #' }
-install <- function(pkgname = 'natverse', dependencies = TRUE, confirm.dependencies.upgrade='never', ...) {
+install <- function(pkgname = 'natverse', dependencies = TRUE,
+                    upgrade.dependencies='always', ...) {
   repos <- paste0("natverse/", pkgname)
 
   # Update if necessary

@@ -27,7 +27,7 @@ check_pat <- function() {
         ui_todo("When ready, get your GitHub PAT with {ui_code('usethis::browse_github_token()')}")
       }
     } else {
-      stop("Please run natverse::install() in an interactive R session!\n",
+      stop("Please run natmanager::install() in an interactive R session!\n",
            "See http://natverse.org/install/ for details!")
     }
   } else{

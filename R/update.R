@@ -34,7 +34,7 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
 
   if(newVersion>oldVersion) {
     if(isTRUE(Sys.getenv("RSTUDIO")=="1")  &&
-       isTRUE(requireNamespace('rstudioapi', quietly))) {
+       isTRUE(requireNamespace('rstudioapi', quietly=TRUE))) {
       res=utils::askYesNo("Can I restart R?")
       if (isTRUE(res)) {
         message("Thank you! You can run natmanager::install() after restarting!")

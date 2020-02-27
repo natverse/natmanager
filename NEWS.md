@@ -1,4 +1,6 @@
-# natmanager (development version)
+# natmanager 0.3.0
+
+* option to 
 
 # natmanager 0.2.0
 

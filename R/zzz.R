@@ -6,6 +6,16 @@
 }
 
 #' @importFrom usethis ui_todo ui_code ui_oops ui_yeah
+#'
+#' @description \code{check_pat} can be used to check if you have a GITHUB_PAT
+#'   set and will advise on how to do this if necessary.
+#' @export
+#' @rdname install
+#' @examples
+#' \dontrun{
+#' # Check status of GitHub PAT
+#' check_pat()
+#' }
 check_pat <- function() {
   pat=usethis::github_token()
   if (isFALSE(nzchar(pat))) {

@@ -1,11 +1,12 @@
 #' Install natverse packages from GitHub
 #'
-#' @description There are currently two collections of nat packages
+#' @description \code{install} allows you to install one of two collections of
+#'   nat packages
 #'
 #'   \itemize{
 #'
 #'   \item \code{core} a minimal install that can use to get started with nat
-#'   and already solve many problems
+#'   and already solve many problems (the default)
 #'
 #'   \item \code{natverse} a powerful "batteries included" distribution with all
 #'   mature packages in the natverse.

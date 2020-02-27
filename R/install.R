@@ -52,7 +52,7 @@ install <- function(collection = c('core', 'natverse'), dependencies = TRUE,
   smartselfupdate()
 
   # We should be able to install core packages without the pat
-  if(collection=='core')
+  if(collection!='core')
     check_pat()
 
   with_envvars(remotes::install_github(

@@ -18,6 +18,6 @@ by default this will list all the repositories inside the
 }
 \examples{
 \donttest{
-list_repo()
+natverse::list_repo()
 }
 }

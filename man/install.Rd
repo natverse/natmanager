@@ -2,17 +2,19 @@
 % Please edit documentation in R/install.R
 \name{install}
 \alias{install}
-\title{Install packages from the natverse GitHub repository.}
+\title{Install natverse packages from GitHub}
 \usage{
 install(
-  pkgname = "natverse",
+  collection = c("core", "natverse"),
   dependencies = TRUE,
   upgrade.dependencies = "always",
   ...
 )
 }
 \arguments{
-\item{pkgname}{Package name inside the `natverse` repository.}
+\item{collection}{The collection of natverse packages that you would like to
+install. The current optiond are \code{core}, the default, or
+\code{natverse}. See Description for more information.}
 
 \item{dependencies}{Which dependencies you want to install see
 \code{\link[remotes]{install_github}}.}
@@ -24,13 +26,29 @@ for details. The default will go ahead and always do this is as necessary.}
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
 }
 \description{
-This will check to see if the GITHUB_PAT is set and will provide instructions
-to the user to set it. Further if the GITHUB_PAT is set, it will start
-installing the dependencies of the `natverse` package.
+There are currently two collections of nat packages
+
+  \itemize{
+
+  \item \code{core} a minimal install that can use to get started with nat
+  and already solve many problems
+
+  \item \code{natverse} a powerful "batteries included" distribution with all
+  mature packages in the natverse.
+
+  }
+
+  Since the \code{natverse} option will install many packages from GitHub,
+  you need to have a GitHub account and personal access token (GITHUB_PAT).
+  Install will check to see if you have a \code{GITHUB_PAT} already and, if
+  not, walk you through the steps of setting one up.
 }
 \examples{
 \dontrun{
-natverse::install()
+# install core packages to try out the core natverse
+natmanager::install('core')
 
+# Full "batteries included" installation with all packages
+natmanager::install('natverse')
 }
 }

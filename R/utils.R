@@ -8,7 +8,7 @@
 #' @export
 #' @examples
 #' \donttest{
-#' list_repo()
+#' natverse::list_repo()
 #' }
 list_repo <- function(orgname = 'natverse') {
   repos <- gh::gh(paste0("/orgs/",orgname,"/repos"), type = "public")

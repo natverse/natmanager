@@ -26,6 +26,13 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
                               upgrade=upgrade.dependencies, ...)
     }
   })
+
+  if(isTRUE(Sys.getenv("RSTUDIO")=="1")) {
+    res=utils::askYesNo("Can I restart R? Then run natmanager::install() again!")
+    if (isTRUE(res))
+      rstudioapi::restartSession()
+  }
+  stop("You must restart R before running natmanager::install() again!")
 }
 
 

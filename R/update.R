@@ -70,7 +70,7 @@ github_newer <- function() {
 smartselfupdate <- function(...) {
   if (isTRUE(github_newer()) && interactive()) {
     res = utils::askYesNo(
-      paste0("There is a newer version of natmanager. Would you like to update\n",
+      paste0("There is a newer version of natmanager. Would you like to update",
       " (recommended!)"),
       default = TRUE
     )

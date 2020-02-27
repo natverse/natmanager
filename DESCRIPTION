@@ -1,6 +1,6 @@
 Package: natmanager
 Title: Install the 'Natverse' Packages from Scratch
-Version: 0.2.3
+Version: 0.2.4
 Authors@R: 
     person(given = "Sridhar",
            family = "Jagannathan",
@@ -30,7 +30,8 @@ Imports:
     curl
 Suggests: 
     testthat (>= 2.1.0),
-    knitr
+    knitr,
+    rstudioapi
 Encoding: UTF-8
 Language: en-GB
 LazyData: true

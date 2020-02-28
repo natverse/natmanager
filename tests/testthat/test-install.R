@@ -19,13 +19,13 @@ test_that("installation works", {
   }
 
 
-  pkgname <- 'nat.devtools'
+  pkgname <- 'nat.templatebrains'
 
   if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
     remove.packages(pkgname, lib = liblocs)
   }
 
-  natmanager::install(pkgname, dependencies = TRUE, lib = liblocs)
+  natmanager::install(collection = 'core', dependencies = TRUE, lib = liblocs)
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 
 })

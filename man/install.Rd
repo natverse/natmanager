@@ -16,7 +16,7 @@ check_pat()
 }
 \arguments{
 \item{collection}{The collection of natverse packages that you would like to
-install. The current optiond are \code{core}, the default, or
+install. The current options are \code{core}, the default, or
 \code{natverse}. See Description for more information.}
 
 \item{dependencies}{Which dependencies you want to install see

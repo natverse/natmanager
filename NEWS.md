@@ -3,7 +3,7 @@
 * option to install a limited core or the full natverse. 
   `install('core')` should not require a GitHub account and PAT
 * move install instructions to the natverse.org/install website
-* more handholding when setting the GITHUB_PAT
+* more hand-holding when setting the GITHUB_PAT
 * only check the GITHUB_PAT when installing the full natverse
 
 # natmanager 0.2.0

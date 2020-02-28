@@ -19,7 +19,7 @@
 #'   not, walk you through the steps of setting one up.
 #'
 #' @param collection The collection of natverse packages that you would like to
-#'   install. The current optiond are \code{core}, the default, or
+#'   install. The current options are \code{core}, the default, or
 #'   \code{natverse}. See Description for more information.
 #' @param dependencies Which dependencies you want to install see
 #'   \code{\link[remotes]{install_github}}.

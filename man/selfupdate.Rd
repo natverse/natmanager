@@ -9,7 +9,7 @@ selfupdate(source = c("GITHUB", "CRAN"), upgrade.dependencies = "always", ...)
 \arguments{
 \item{source}{Location from which to obtain a newer version of natmanager.
 Defaults to GITHUB since this may well have a newer version than the CRAN
-packgae repository.}
+package repository.}
 
 \item{upgrade.dependencies}{Whether to install dependencies of natmanager.
 See the \code{upgrade} argument of \code{\link[remotes]{install_github}}

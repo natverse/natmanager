@@ -2,7 +2,7 @@
 #'
 #' @param source Location from which to obtain a newer version of natmanager.
 #'   Defaults to GITHUB since this may well have a newer version than the CRAN
-#'   packgae repository.
+#'   package repository.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}
 #'   or \code{\link[remotes]{install_cran}}.
 #' @param upgrade.dependencies Whether to install dependencies of natmanager.
@@ -19,7 +19,7 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
                        upgrade.dependencies='always', ...) {
   source <- match.arg(source)
 
-  oldVersion=packageVersion('natmanager')
+  oldVersion=utils::packageVersion('natmanager')
 
   with_envvars({
     if (source == 'CRAN') {
@@ -30,7 +30,7 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
     }
   })
 
-  newVersion=packageVersion('natmanager')
+  newVersion=utils::packageVersion('natmanager')
 
   if(newVersion>oldVersion) {
     if(isTRUE(Sys.getenv("RSTUDIO")=="1")  &&

@@ -19,14 +19,14 @@ jobs:
          - echo 'options(Ncpus = 2)' >> ~/.Rprofile
          - export PATH=$PATH:$HOME/usr/local/bin
       install:
-         - R -e 'install.packages(c("remotes", "rgl"))'
+         - R -e 'install.packages("remotes");remotes::install_github("natverse/natmanager",dependencies = TRUE)'
       script: true
     - stage: pre-cache2
       before_install:
          - echo 'options(Ncpus = 2)' >> ~/.Rprofile
          - export PATH=$PATH:$HOME/usr/local/bin
       install:
-         - R -e 'remotes::install_github("natverse/nat",dependencies = TRUE)'
+         - R -e 'natmanager::install("core"")'
       script: true
     - stage: test
       before_install:

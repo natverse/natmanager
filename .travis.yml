@@ -26,7 +26,7 @@ jobs:
          - echo 'options(Ncpus = 2)' >> ~/.Rprofile
          - export PATH=$PATH:$HOME/usr/local/bin
       install:
-         - R -e 'natmanager::install("core")'
+         - R -e 'old = Sys.getenv("CI"); Sys.setenv("CI" = ""); natmanager::install("core"); Sys.setenv("CI" = old)'
       script: true
     - stage: test
       before_install:

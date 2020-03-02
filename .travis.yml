@@ -1,11 +1,46 @@
+# Header
 language: r
-dist: bionic
-cache: packages
+cache:
+  packages: true
+  directories:
+  - $HOME/usr/local
+
+warnings_are_errors: true
+
+stages:
+  - name: pre-cache1
+  - name: pre-cache2
+  - name: test
+
+jobs:
+  include:
+    - stage: pre-cache1
+      before_install:
+         - echo 'options(Ncpus = 2)' >> ~/.Rprofile
+         - export PATH=$PATH:$HOME/usr/local/bin
+         - sh ./cmtk_build.sh
+      install:
+         - R -e 'install.packages(c("remotes", "rgl"))'
+      script: true
+    - stage: pre-cache2
+      before_install:
+         - echo 'options(Ncpus = 2)' >> ~/.Rprofile
+         - export PATH=$PATH:$HOME/usr/local/bin
+      install:
+         - R -e 'remotes::install_github("natverse/nat",dependencies = TRUE)'
+      script: true
+    - stage: test
+      before_install:
+         - echo 'options(Ncpus = 2)' >> ~/.Rprofile
+         - export PATH=$PATH:$HOME/usr/local/bin
 
 addons:
-    apt:
-        packages:
-            - libmagick++-dev
+  apt:
+    packages:
+    - libglu1-mesa-dev
 
-before_install:
-  - Rscript -e 'utils::install.packages(c("Matrix","RcppEigen","lattice","MASS","mgcv","httpuv"))'
+#env
+env:
+  global:
+    - secure: U5L4JHPa5/mpcDjL60XZVDXtT/nQe4lyhCG6pIj7dF8N6iLRO/vh0ChPxZsBhunKaNMnu59MEqn9nvp09kodV7DzW1nNV+UVi2ZtXpAFejHOK6T4d31vGShCnoM5BkTeMp7exX8yfKWw3Zw0JY47sHTLFihYbwUFqsus0aqT0hIK
+    - RGL_USE_NULL=TRUE

@@ -25,7 +25,7 @@ test_that("installation works", {
     remove.packages(pkgname, lib = liblocs)
   }
 
-  natmanager::install(collection = 'core', dependencies = c("Depends", "Imports"),
+  natmanager::install(collection = 'core', dependencies = TRUE,
                       upgrade.dependencies = FALSE, lib = liblocs)
   expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
 

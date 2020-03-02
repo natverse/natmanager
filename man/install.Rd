@@ -34,7 +34,7 @@ for details. The default will go ahead and always do this is as necessary.}
 
   \itemize{
 
-  \item \code{core} a minimal install that can use to get started with nat
+  \item \code{core} a minimal install that can help users to get started with nat
   and already solve many problems (the default)
 
   \item \code{natverse} a powerful "batteries included" distribution with all

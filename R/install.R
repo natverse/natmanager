@@ -5,7 +5,7 @@
 #'
 #'   \itemize{
 #'
-#'   \item \code{core} a minimal install that can use to get started with nat
+#'   \item \code{core} a minimal install that can help users to get started with nat
 #'   and already solve many problems (the default)
 #'
 #'   \item \code{natverse} a powerful "batteries included" distribution with all
@@ -25,6 +25,7 @@
 #'   \code{\link[remotes]{install_github}}.
 #' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}.
 #' @importFrom utils install.packages
+#' @importFrom usethis ui_info
 #' @inheritParams selfupdate
 #' @export
 #' @examples
@@ -35,7 +36,6 @@
 #' # Full "batteries included" installation with all packages
 #' natmanager::install('natverse')
 #' }
-#' @importFrom usethis ui_info
 install <- function(collection = c('core', 'natverse'), dependencies = TRUE,
                     upgrade.dependencies='always', ...) {
 

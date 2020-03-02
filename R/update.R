@@ -8,13 +8,13 @@
 #' @param upgrade.dependencies Whether to install dependencies of natmanager.
 #'   See the \code{upgrade} argument of \code{\link[remotes]{install_github}}
 #'   for details. The default will go ahead and always do this is as necessary.
+#' @importFrom utils browseURL packageVersion
 #' @export
 #' @seealso \code{\link{install}}
 #' @examples
 #' \dontrun{
 #' natmanager::selfupdate()
 #' }
-#' @importFrom utils browseURL packageVersion
 selfupdate <- function(source = c('GITHUB', 'CRAN'),
                        upgrade.dependencies='always', ...) {
   source <- match.arg(source)

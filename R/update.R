@@ -21,14 +21,18 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
 
   oldVersion=utils::packageVersion('natmanager')
 
-  with_envvars({
-    if (source == 'CRAN') {
-      remotes::install_cran('natmanager', ...)
-    } else {
-      remotes::install_github('natverse/natmanager',
-                              upgrade=upgrade.dependencies, ...)
-    }
-  })
+  # use personal PAT or bundled one if that fails
+  withr::local_envvar(c(GITHUB_PAT=check_pat(create = FALSE),
+                        R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE))
+  # only use source packages if essential
+  withr::local_options(list(install.packages.compile.from.source='never'))
+
+  if (source == 'CRAN') {
+    remotes::install_cran('natmanager', ...)
+  } else {
+    remotes::install_github('natverse/natmanager',
+                            upgrade=upgrade.dependencies, ...)
+  }
 
   newVersion=utils::packageVersion('natmanager')
 

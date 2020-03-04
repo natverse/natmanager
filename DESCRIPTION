@@ -1,6 +1,6 @@
 Package: natmanager
 Title: Install the 'Natverse' Packages from Scratch
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: c(
     person(given = "Sridhar",
            family = "Jagannathan",
@@ -26,7 +26,8 @@ Imports:
     utils,
     remotes,
     usethis,
-    curl
+    curl,
+    withr
 Suggests: 
     testthat (>= 2.1.0),
     knitr,

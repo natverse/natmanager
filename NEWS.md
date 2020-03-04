@@ -1,3 +1,7 @@
+# natmanager 0.4.0
+
+* use bundled PAT when nothing else available
+
 # natmanager 0.3.0
 
 * option to install a limited core or the full natverse. 

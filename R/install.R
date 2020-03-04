@@ -48,33 +48,27 @@ install <- function(collection = c('core', 'natverse'), dependencies = TRUE,
   }
   repos = paste0("natverse/", pkgs)
 
+  # use personal PAT or bundled one if that fails
+  withr::local_envvar(c(GITHUB_PAT=check_pat(create = FALSE),
+                        R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE))
+  # only use source packages if essential
+  withr::local_options(list(install.packages.compile.from.source='never'))
+  # withr::local_options(list(install.packages.check.source='no'))
+
   # Update if necessary
   smartselfupdate()
 
-  # We should be able to install core packages without the pat
-  if(collection!='core')
-    check_pat()
-
-  with_envvars(remotes::install_github(
+  remotes::install_github(
     repos,
     dependencies = dependencies,
     upgrade = upgrade.dependencies,
     ...
-  ))
+  )
 
   if(collection=='core') {
-    ui_todo("To install the full natverse in future do {ui_code('natmanager::install(\"natverse\")')}")
     ui_info("Load the core nat package with {ui_code('library(nat)')}")
+    ui_todo("To install the full natverse in future do {ui_code('natmanager::install(\"natverse\")')}")
   } else {
     ui_info("Load the full natverse with {ui_code('library(natverse)')}")
   }
-}
-
-with_envvars <- function(expr) {
-  #Set the option for install, such that warnings from remotes package are not converted to errors..
-  #For details see here: https://github.com/r-lib/remotes/issues/403
-  old=Sys.getenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS")
-  Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = TRUE)
-  on.exit(Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = old))
-  force(expr)
 }

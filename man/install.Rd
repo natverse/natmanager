@@ -12,7 +12,7 @@ install(
   ...
 )
 
-check_pat()
+check_pat(create = TRUE)
 }
 \arguments{
 \item{collection}{The collection of natverse packages that you would like to
@@ -27,6 +27,15 @@ See the \code{upgrade} argument of \code{\link[remotes]{install_github}}
 for details. The default will go ahead and always do this is as necessary.}
 
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
+
+\item{create}{Whether to help you create a personal GITHUB_PAT if you do not
+have one set. When \code{create=FALSE} a default PAT will be used if you
+have not set your own. This could cause trouble if other people are using
+the same PAT.}
+}
+\value{
+\code{check_pat} returns the PAT invisibly or errors out if
+  \code{create=TRUE} and none can be set.
 }
 \description{
 \code{install} allows you to install one of two collections of
@@ -59,7 +68,9 @@ natmanager::install('core')
 natmanager::install('natverse')
 }
 \dontrun{
-# Check status of GitHub PAT
-check_pat()
+# Check status of GitHub PAT and create one if required
+natmanager::check_pat(create=FALSE)
+# Check status of GitHub PAT and use default if no personal one available
+natmanager::check_pat(create=FALSE)
 }
 }

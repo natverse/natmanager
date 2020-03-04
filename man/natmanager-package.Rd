@@ -6,11 +6,11 @@
 \alias{natmanager-package}
 \title{natmanager: Install the 'Natverse' Packages from Scratch}
 \description{
-Provides a streamlined installation for packages from the 
-    'natverse' a suite of R packages for computational neuroanatomy built on top
-    of the 'nat' 'NeuroAnatomy Toolbox' package. Installation of the complete
-    'natverse' suite requires a GitHub user account and personal access token
-    'GITHUB_PAT'. natmanager will help the end user set this up if necessary.
+Provides streamlined installation for packages from the 'natverse',
+    a suite of R packages for computational neuroanatomy built on top of the
+    'nat' 'NeuroAnatomy Toolbox' package. Installation of the complete
+    'natverse' suite requires a 'GitHub' user account and personal access token
+    'GITHUB_PAT'. 'natmanager' will help the end user set this up if necessary.
 }
 \examples{
 \dontrun{
@@ -26,11 +26,11 @@ natmanager::install('natverse')
 \code{\link{install}}
 }
 \author{
-\strong{Maintainer}: Sridhar Jagannathan \email{j.sridharrajan@gmail.com} (\href{https://orcid.org/0000-0002-2078-1145}{ORCID})
+\strong{Maintainer}: Gregory Jefferis \email{jefferis@gmail.com} (\href{https://orcid.org/0000-0002-0587-9355}{ORCID})
 
 Authors:
 \itemize{
-  \item Gregory Jefferis \email{jefferis@gmail.com} (\href{https://orcid.org/0000-0002-0587-9355}{ORCID})
+  \item Sridhar Jagannathan \email{j.sridharrajan@gmail.com} (\href{https://orcid.org/0000-0002-2078-1145}{ORCID})
 }
 
 }

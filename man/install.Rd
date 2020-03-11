@@ -69,7 +69,7 @@ natmanager::install('natverse')
 }
 \dontrun{
 # Check status of GitHub PAT and create one if required
-natmanager::check_pat(create=FALSE)
+natmanager::check_pat(create=TRUE)
 # Check status of GitHub PAT and use default if no personal one available
 natmanager::check_pat(create=FALSE)
 }

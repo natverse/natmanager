@@ -8,6 +8,8 @@
 #' @param upgrade.dependencies Whether to install dependencies of natmanager.
 #'   See the \code{upgrade} argument of \code{\link[remotes]{install_github}}
 #'   for details. The default will go ahead and always do this is as necessary.
+#' @param force Force self update even if there doesn't seem to be an update
+#'   (default \code{FALSE})
 #' @return Logical indicating whether an update was required (invisibly).
 #' @importFrom utils browseURL packageVersion
 #' @export
@@ -17,7 +19,7 @@
 #' natmanager::selfupdate()
 #' }
 selfupdate <- function(source = c('GITHUB', 'CRAN'),
-                       upgrade.dependencies='always', ...) {
+                       upgrade.dependencies='always', force=FALSE, ...) {
   source <- match.arg(source)
 
   oldVersion=utils::packageVersion('natmanager')
@@ -32,7 +34,7 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
     remotes::install_cran('natmanager', ...)
   } else {
     remotes::install_github('natverse/natmanager',
-                            upgrade=upgrade.dependencies, ...)
+                            upgrade=upgrade.dependencies, force=force, ...)
   }
 
   newVersion=utils::packageVersion('natmanager')

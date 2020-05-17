@@ -1,3 +1,7 @@
+# natmanager 0.4.3
+
+* Fix bug in `selfupdate()` recall on restart
+
 # natmanager 0.4.2
 
 * `selfupdate()` tweaks: restart `install()` process after session restart when

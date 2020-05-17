@@ -51,7 +51,7 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
           # get the top level call
           topcall=deparse(sys.calls()[[1]])
           # add natmanager:: prefix so we can run it without loading package
-          topcall=sub("^install\\(", "natmanager::install(")
+          topcall=sub("^install\\(", "natmanager::install(", topcall)
           # clear topcall if it doesn't look like a plain install command
           if(isFALSE(grepl("^natmanager::install", topcall))) topcall=""
         }

@@ -65,8 +65,8 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
   withr::local_options(list(install.packages.compile.from.source='never'))
   # withr::local_options(list(install.packages.check.source='no'))
 
-  # Update if necessary
-  smartselfupdate()
+  # Update if necessary and stop the rest of the update process if we had to
+  if(smartselfupdate()) return(invisible(NULL))
 
   res <- remotes::install_github(
     repos,

@@ -18,6 +18,9 @@ for details. The default will go ahead and always do this is as necessary.}
 \item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}
 or \code{\link[remotes]{install_cran}}.}
 }
+\value{
+Logical indicating whether an update was required (invisibly).
+}
 \description{
 Update the `natmanager` package itself.
 }

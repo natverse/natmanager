@@ -7,6 +7,7 @@
 \usage{
 install(
   collection = c("core", "natverse"),
+  pkgs = NULL,
   dependencies = TRUE,
   upgrade.dependencies = "always",
   ...
@@ -18,6 +19,9 @@ check_pat(create = TRUE)
 \item{collection}{The collection of natverse packages that you would like to
 install. The current options are \code{core}, the default, or
 \code{natverse}. See Description for more information.}
+
+\item{pkgs}{A character vector of package names specifying natverse packages
+to install. When present overrides the \code{collection} argument.}
 
 \item{dependencies}{Which dependencies you want to install see
 \code{\link[remotes]{install_github}}.}
@@ -43,8 +47,8 @@ the same PAT.}
 
   \itemize{
 
-  \item \code{core} a minimal install that can help users to get started with nat
-  and already solve many problems (the default)
+  \item \code{core} a minimal install that can help users to get started with
+  nat and already solve many problems (the default)
 
   \item \code{natverse} a powerful "batteries included" distribution with all
   mature packages in the natverse.
@@ -54,7 +58,9 @@ the same PAT.}
   Since the \code{natverse} option will install many packages from GitHub,
   you need to have a GitHub account and personal access token (GITHUB_PAT).
   Install will check to see if you have a \code{GITHUB_PAT} already and, if
-  not, walk you through the steps of setting one up.
+  not, walk you through the steps of setting one up. A fall-back PAT is built
+  into the package but we strongly recommend that you sign up to GitHub and
+  get your own if you start using the natverse regularly.
 
 \code{check_pat} can be used to check if you have a GITHUB_PAT
   set and will advise on how to do this if necessary.
@@ -66,6 +72,9 @@ natmanager::install('core')
 
 # Full "batteries included" installation with all packages
 natmanager::install('natverse')
+
+# Install a specific natverse package
+natmanager::install(pkgs='nat.jrcbrains')
 }
 \dontrun{
 # Check status of GitHub PAT and create one if required

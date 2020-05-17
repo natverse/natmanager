@@ -1,3 +1,8 @@
+# natmanager 0.4.1
+
+* give `install()` the options to install specific packages rather than 
+  collections.
+
 # natmanager 0.4.0
 
 * use bundled PAT when nothing else available

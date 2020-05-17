@@ -53,6 +53,8 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
       c("nat", "nat.nblast", "nat.templatebrains")
     else
       "natverse"
+  } else {
+    collection=NULL
   }
   repos = paste0("natverse/", pkgs)
 
@@ -66,17 +68,19 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
   # Update if necessary
   smartselfupdate()
 
-  remotes::install_github(
+  res <- remotes::install_github(
     repos,
     dependencies = dependencies,
     upgrade = upgrade.dependencies,
     ...
   )
 
-  if(collection=='core') {
+  if(isTRUE(collection=='core')) {
     ui_info("Load the core nat package with {ui_code('library(nat)')}")
     ui_todo("To install the full natverse in future do {ui_code('natmanager::install(\"natverse\")')}")
-  } else {
+  } else if(isTRUE(collection=='natverse')){
     ui_info("Load the full natverse with {ui_code('library(natverse)')}")
   }
+
+  invisible(res)
 }

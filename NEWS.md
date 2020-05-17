@@ -1,3 +1,8 @@
+# natmanager 0.4.2
+
+* `selfupdate()` tweaks: restart `install()` process after session restart when
+  possible, don't stop after restart, `force` option.
+
 # natmanager 0.4.1
 
 * give `install()` the options to install specific packages rather than 

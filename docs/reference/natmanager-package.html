@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>List all the repos inside a particular GitHub organisation — list_repo • natmanager</title>
+<title>natmanager: Install the 'Natverse' Packages from Scratch — natmanager-package • natmanager</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,12 @@
 
 
 
-<meta property="og:title" content="List all the repos inside a particular GitHub organisation — list_repo" />
-<meta property="og:description" content="by default this will list all the repositories inside the
-  `natverse` organization." />
+<meta property="og:title" content="natmanager: Install the 'Natverse' Packages from Scratch — natmanager-package" />
+<meta property="og:description" content="Provides streamlined installation for packages from the 'natverse',
+    a suite of R packages for computational neuroanatomy built on top of the
+    'nat' 'NeuroAnatomy Toolbox' package. Installation of the complete
+    'natverse' suite requires a 'GitHub' user account and personal access token
+    'GITHUB_PAT'. 'natmanager' will help the end user set this up if necessary." />
 
 
 
@@ -112,41 +115,34 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>List all the repos inside a particular GitHub organisation</h1>
-    <small class="dont-index">Source: <a href='https://github.com/natverse/natmanager/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>list_repo.Rd</code></div>
+    <h1>natmanager: Install the 'Natverse' Packages from Scratch</h1>
+    <small class="dont-index">Source: <a href='https://github.com/natverse/natmanager/blob/master/R/natmanager-package.R'><code>R/natmanager-package.R</code></a></small>
+    <div class="hidden name"><code>natmanager-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>by default this will list all the repositories inside the
-  `natverse` organization.</p>
+    <p>Provides streamlined installation for packages from the 'natverse',
+    a suite of R packages for computational neuroanatomy built on top of the
+    'nat' 'NeuroAnatomy Toolbox' package. Installation of the complete
+    'natverse' suite requires a 'GitHub' user account and personal access token
+    'GITHUB_PAT'. 'natmanager' will help the end user set this up if necessary.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>list_repo</span>(<span class='kw'>orgname</span> <span class='kw'>=</span> <span class='st'>"natverse"</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>orgname</th>
-      <td><p>Name of the GitHub organization</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Character vector of repository names</p>
+    <div class='dont-index'><p><code><a href='install.html'>install</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='kw pkg'>natmanager</span><span class='kw ns'>::</span><span class='fu'>list_repo</span>()</div><div class='output co'>#&gt;  [1] "nat"                "flycircuit"         "nat.flybrains"     
-#&gt;  [4] "nat.examples"       "nat.nblast"         "nat.templatebrains"
-#&gt;  [7] "rcatmaid"           "elmr"               "mouselightr"       
-#&gt; [10] "nat.jrcbrains"      "nat.h5reg"          "drvid"             
-#&gt; [13] "neuprintr"          "neuromorphr"        "natverse"          
-#&gt; [16] "natverse_hugo"      "natverse.github.io" "insectbrainr"      
-#&gt; [19] "nat.devtools"       "fishatlas"          "natmanager"        </div><div class='input'># }
-</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'># install core packages to try out the core natverse</span>
+<span class='kw pkg'>natmanager</span><span class='kw ns'>::</span><span class='fu'><a href='install.html'>install</a></span>(<span class='st'>'core'</span>)
+
+<span class='co'># Full "batteries included" installation with all packages</span>
+<span class='co'># You need a GitHub account and personal access token (PAT) for this</span>
+<span class='kw pkg'>natmanager</span><span class='kw ns'>::</span><span class='fu'><a href='install.html'>install</a></span>(<span class='st'>'natverse'</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

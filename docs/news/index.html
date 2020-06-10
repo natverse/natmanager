@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>List all the repos inside a particular GitHub organisation — list_repo • natmanager</title>
+<title>Changelog • natmanager</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,7 @@
 
 
 
-<meta property="og:title" content="List all the repos inside a particular GitHub organisation — list_repo" />
-<meta property="og:description" content="by default this will list all the repositories inside the
-  `natverse` organization." />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -60,7 +58,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -112,47 +110,87 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>List all the repos inside a particular GitHub organisation</h1>
-    <small class="dont-index">Source: <a href='https://github.com/natverse/natmanager/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>list_repo.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/natverse/natmanager/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>by default this will list all the repositories inside the
-  `natverse` organization.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>list_repo</span>(<span class='kw'>orgname</span> <span class='kw'>=</span> <span class='st'>"natverse"</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>orgname</th>
-      <td><p>Name of the GitHub organization</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Character vector of repository names</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='kw pkg'>natmanager</span><span class='kw ns'>::</span><span class='fu'>list_repo</span>()</div><div class='output co'>#&gt;  [1] "nat"                "flycircuit"         "nat.flybrains"     
-#&gt;  [4] "nat.examples"       "nat.nblast"         "nat.templatebrains"
-#&gt;  [7] "rcatmaid"           "elmr"               "mouselightr"       
-#&gt; [10] "nat.jrcbrains"      "nat.h5reg"          "drvid"             
-#&gt; [13] "neuprintr"          "neuromorphr"        "natverse"          
-#&gt; [16] "natverse_hugo"      "natverse.github.io" "insectbrainr"      
-#&gt; [19] "nat.devtools"       "fishatlas"          "natmanager"        </div><div class='input'># }
-</div></pre>
+    <div id="natmanager-044" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.4">
+<a href="#natmanager-044" class="anchor"></a>natmanager 0.4.4<small> Unreleased </small>
+</h1>
+<ul>
+<li>use <code>R_REMOTES_STANDALONE</code> environment variable to try to prevent some Windows installation issues. See <a href="https://github.com/r-lib/remotes#standalone-mode" class="uri">https://github.com/r-lib/remotes#standalone-mode</a>.</li>
+</ul>
+</div>
+    <div id="natmanager-043" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.3">
+<a href="#natmanager-043" class="anchor"></a>natmanager 0.4.3<small> Unreleased </small>
+</h1>
+<ul>
+<li>Fix bug in <code><a href="../reference/selfupdate.html">selfupdate()</a></code> recall on restart</li>
+</ul>
+</div>
+    <div id="natmanager-042" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.2">
+<a href="#natmanager-042" class="anchor"></a>natmanager 0.4.2<small> Unreleased </small>
+</h1>
+<ul>
+<li>
+<code><a href="../reference/selfupdate.html">selfupdate()</a></code> tweaks: restart <code><a href="../reference/install.html">install()</a></code> process after session restart when possible, don’t stop after restart, <code>force</code> option.</li>
+</ul>
+</div>
+    <div id="natmanager-041" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.1">
+<a href="#natmanager-041" class="anchor"></a>natmanager 0.4.1<small> Unreleased </small>
+</h1>
+<ul>
+<li>give <code><a href="../reference/install.html">install()</a></code> the options to install specific packages rather than collections.</li>
+</ul>
+</div>
+    <div id="natmanager-040" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.0">
+<a href="#natmanager-040" class="anchor"></a>natmanager 0.4.0<small> 2020-03-11 </small>
+</h1>
+<ul>
+<li>use bundled PAT when nothing else available</li>
+</ul>
+</div>
+    <div id="natmanager-030" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.0">
+<a href="#natmanager-030" class="anchor"></a>natmanager 0.3.0<small> Unreleased </small>
+</h1>
+<ul>
+<li>option to install a limited core or the full natverse. <code><a href="../reference/install.html">install('core')</a></code> should not require a GitHub account and PAT</li>
+<li>move install instructions to the natverse.org/install website</li>
+<li>more hand-holding when setting the GITHUB_PAT</li>
+<li>only check the GITHUB_PAT when installing the full natverse</li>
+</ul>
+</div>
+    <div id="natmanager-020" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.0">
+<a href="#natmanager-020" class="anchor"></a>natmanager 0.2.0<small> Unreleased </small>
+</h1>
+<ul>
+<li>add <code><a href="../reference/selfupdate.html">selfupdate()</a></code> function</li>
+<li>make install more resistant to warnings especially prevalent on Windows</li>
+</ul>
+</div>
+    <div id="natmanager-010" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0">
+<a href="#natmanager-010" class="anchor"></a>natmanager 0.1.0<small> 2020-02-11 </small>
+</h1>
+<ul>
+<li>First version on CRAN</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 

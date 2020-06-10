@@ -1,3 +1,8 @@
+# natmanager 0.4.4
+
+* use `R_REMOTES_STANDALONE` environment variable to try to prevent some Windows
+  installation issues. See https://github.com/r-lib/remotes#standalone-mode.
+
 # natmanager 0.4.3
 
 * Fix bug in `selfupdate()` recall on restart

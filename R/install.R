@@ -59,8 +59,14 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
   repos = paste0("natverse/", pkgs)
 
   # use personal PAT or bundled one if that fails
-  withr::local_envvar(c(GITHUB_PAT=check_pat(create = FALSE),
-                        R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE))
+  envvars = c(
+    GITHUB_PAT = check_pat(create = FALSE),
+    R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE
+  )
+  # can help with permissions errors when updating loaded libraries
+  if(isTRUE(.Platform$OS.type == "windows"))
+    envvars = c(envvars, R_REMOTES_STANDALONE = TRUE)
+  withr::local_envvar(envvars)
   # only use source packages if essential
   withr::local_options(list(install.packages.compile.from.source='never'))
   # withr::local_options(list(install.packages.check.source='no'))

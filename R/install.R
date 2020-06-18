@@ -53,10 +53,16 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
       c("nat", "nat.nblast", "nat.templatebrains")
     else
       "natverse"
+    repos = paste0("natverse/", pkgs)
   } else {
     collection=NULL
+    #use the actual repo if it is suggested otherwise assume natverse..
+    if (grepl("/",pkgs)){
+      repos = pkgs
+    }else{
+      repos = paste0("natverse/", pkgs)
+    }
   }
-  repos = paste0("natverse/", pkgs)
 
   # use personal PAT or bundled one if that fails
   envvars = c(

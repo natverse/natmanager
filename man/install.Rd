@@ -75,6 +75,8 @@ natmanager::install('natverse')
 
 # Install a specific natverse package
 natmanager::install(pkgs='nat.jrcbrains')
+# Install a non-natverse package
+natmanager::install(pkgs='flyconnectome/hemibrainr')
 }
 \dontrun{
 # Check status of GitHub PAT and create one if required

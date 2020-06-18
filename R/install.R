@@ -42,6 +42,8 @@
 #'
 #' # Install a specific natverse package
 #' natmanager::install(pkgs='nat.jrcbrains')
+#' # Install a non-natverse package
+#' natmanager::install(pkgs='flyconnectome/hemibrainr')
 #' }
 install <- function(collection = c('core', 'natverse'), pkgs=NULL,
                     dependencies = TRUE,

@@ -58,6 +58,9 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
   }
   repos = paste0("natverse/", pkgs)
 
+  if(!system_requirements_ok())
+    return(invisible(FALSE))
+
   # use personal PAT or bundled one if that fails
   envvars = c(
     GITHUB_PAT = check_pat(create = FALSE),

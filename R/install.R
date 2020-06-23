@@ -40,10 +40,9 @@
 #' # Full "batteries included" installation with all packages
 #' natmanager::install('natverse')
 #'
-#' # Install a specific natverse package
-#' natmanager::install(pkgs='nat.jrcbrains')
-#' # Install a non-natverse package
-#' natmanager::install(pkgs='flyconnectome/hemibrainr')
+#' # Install natverse, non-natverse package
+#' # for natverse packages no need to specify the repo
+#' natmanager::install(pkgs=c('nat.jrcbrains','flyconnectome/hemibrainr'))
 #' }
 install <- function(collection = c('core', 'natverse'), pkgs=NULL,
                     dependencies = TRUE,
@@ -59,11 +58,7 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
   } else {
     collection=NULL
     #use the actual repo if it is suggested otherwise assume natverse..
-    if (grepl("/",pkgs)){
-      repos = pkgs
-    }else{
-      repos = paste0("natverse/", pkgs)
-    }
+    repos=ifelse(grepl("/", pkgs), pkgs, paste0('natverse/', pkgs))
   }
 
   # use personal PAT or bundled one if that fails

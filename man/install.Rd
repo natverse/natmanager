@@ -73,8 +73,9 @@ natmanager::install('core')
 # Full "batteries included" installation with all packages
 natmanager::install('natverse')
 
-# Install a specific natverse package
-natmanager::install(pkgs='nat.jrcbrains')
+# Install natverse, non-natverse package
+# for natverse packages no need to specify the repo
+natmanager::install(pkgs=c('nat.jrcbrains','flyconnectome/hemibrainr'))
 }
 \dontrun{
 # Check status of GitHub PAT and create one if required

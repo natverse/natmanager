@@ -32,4 +32,10 @@ system_requirements_ok <- function() {
     }
     return(TRUE)
   }
+  if(isTRUE(.Platform$OS.type == "windows")) {
+    return(TRUE)
+  }
+  warning("Unrecognised platform! Unable to check system requirements.")
+  return(TRUE)
+
 }

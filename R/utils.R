@@ -20,17 +20,16 @@ have_xquartz <- function() {
 }
 
 system_requirements_ok <- function() {
-  if(isTRUE(.Platform$OS.type == "windows")) {
+  if(grepl("linux-gnu", R.version$os) | grepl("mingw", R.version$os)) {
     return(TRUE)
   }
-  sysname=Sys.info()["sysname"]
-  if(isTRUE(sysname=='Darwin')) {
+  if(grepl("^darwin", R.version$os)) {
     if(!have_xquartz()){
       usethis::ui_todo(paste("Please download and install Xquartz from",
                        "https://www.xquartz.org!\nThis is a system requirement",
                        "and is needed for 3D display of neurons."))
       return(FALSE)
     }
+    return(TRUE)
   }
-  return(TRUE)
 }

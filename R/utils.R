@@ -20,7 +20,7 @@ have_xquartz <- function() {
 }
 
 system_requirements_ok <- function() {
-  if(grepl("linux-gnu", R.version$os) | grepl("mingw", R.version$os)) {
+  if(isTRUE(.Platform$OS.type == "windows")) {
     return(TRUE)
   }
   if(grepl("^darwin", R.version$os)) {
@@ -32,10 +32,12 @@ system_requirements_ok <- function() {
     }
     return(TRUE)
   }
-  if(isTRUE(.Platform$OS.type == "windows")) {
+  if(grepl("linux-gnu", R.version$os)) {
+    return(TRUE)
+  }
+  if(grepl("solaris", R.version$os)) {
     return(TRUE)
   }
   warning("Unrecognised platform! Unable to check system requirements.")
   return(TRUE)
-
 }

@@ -1,3 +1,9 @@
+# natmanager 0.4.5
+
+* use new private `system_requirements_ok` function during install. Right now
+this only checks for xquartz on macosx but additional checks or suggestions may
+be added in future.
+
 # natmanager 0.4.4
 
 * use `R_REMOTES_STANDALONE` environment variable to try to prevent some Windows

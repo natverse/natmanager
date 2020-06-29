@@ -1,5 +1,8 @@
 # Header
 language: r
+r:
+  - oldrel
+  - release
 cache:
   packages: true
   directories:

@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![natmanager](https://img.shields.io/badge/natmanager-Part%20of%20the%20natverse-a241b6)](https://natverse.github.io)
-[![CRAN](https://img.shields.io/cran/v/natmanager)](https://cran.r-project.org/web/packages/natmanager/index.html)
+[![CRAN](https://img.shields.io/cran/v/natmanager)](https://cran.r-project.org/package=natmanager)
 [![GitHub](https://img.shields.io/github/v/release/natverse/natmanager)](https://github.com/natverse/natmanager/releases/)
 [![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](https://natverse.github.io/natmanager/reference/)
 [![Travis build

@@ -1,12 +1,13 @@
-This version of natmanager streamlines the process of obtaining a GITHUB_PAT
-if necessary.
+This version of natmanager adds support for installing non-natverse packages, informs the user
+if x-quartz is not installed in MacOS X.
 
 ## Test environments
-* local R installation, R 3.6.2on MacOS X
-* ubuntu 16.04 (on travis-ci), R 3.6.2
-* win-builder (devel)
+* Installation on multiple OS was validated using rhub::check_for_cran()
+* Logs here: 
+  https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-9433fcb2b5794c7a8d5096482b5dfa7b
+  https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-0267301af3f74bf8807685e4910dff2e
+  https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-2a4e546220ab4e50b794928ceddf85be
 
-https://win-builder.r-project.org/yvseHLws6e4M/00check.log
 
 ## R CMD check results
 

@@ -1,3 +1,8 @@
+# natmanager 0.4.6
+
+* provide options for installing non-natverse packages via `natmanager`. Bump up version
+  for preparation of package update on `CRAN`
+
 # natmanager 0.4.5
 
 * use new private `system_requirements_ok` function during install. Right now

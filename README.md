@@ -6,9 +6,14 @@
 <!-- badges: start -->
 
 [![natmanager](https://img.shields.io/badge/natmanager-Part%20of%20the%20natverse-a241b6)](https://natverse.github.io)
+[![CRAN](https://img.shields.io/cran/v/natmanager)](https://cran.r-project.org/web/packages/natmanager/index.html)
+[![GitHub](https://img.shields.io/github/v/release/natverse/natmanager)](https://github.com/natverse/natmanager/releases/)
 [![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](https://natverse.github.io/natmanager/reference/)
 [![Travis build
 status](https://travis-ci.org/natverse/natmanager.svg?branch=master)](https://travis-ci.org/natverse/natmanager)
+![CRAN
+Downloads](http://cranlogs.r-pkg.org/badges/grand-total/natmanager)
+
 <!-- badges: end -->
 
 The goal of natmanager is to streamline installation of packages from
@@ -25,4 +30,8 @@ natmanager::install('core')
 # Full "batteries included" installation with all packages
 # You need a GitHub account and personal access token (PAT) for this
 natmanager::install('natverse')
+
+#you can also install non-natverse packages like below, this feature is useful if you want to avoid
+#rate limiting issues from github and errors from warnings while installing packages:
+natmanager::install('flyconnectome/hemibrainr')
 ```

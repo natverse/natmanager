@@ -1,6 +1,6 @@
 Package: natmanager
 Title: Install the 'Natverse' Packages from Scratch
-Version: 0.4.5
+Version: 0.4.6
 Authors@R: c(
     person(given = "Sridhar",
            family = "Jagannathan",

@@ -3,9 +3,9 @@ if x-quartz is not installed in MacOS X.
 
 ## Test environments
 * Installation on multiple OS was validated using rhub::check_for_cran()
-* Windows: https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-0963c02be4fe43238e68eee2e5d2cdf6
-* MacOS: https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-54a2f23777ae4e559e9249cfbf03645f
-* Linux: https://travis-ci.org/github/natverse/natmanager/builds/705404214
+* Windows: https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-379814daf97fbf06bdd7a53ad9daf553
+* MacOS: https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-2cc6bb0f10c1547db9723e5ed6cace89
+* Linux: https://travis-ci.org/github/natverse/natmanager/builds/705471936
 
 
 ## R CMD check results

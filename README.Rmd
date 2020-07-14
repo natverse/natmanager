@@ -36,7 +36,8 @@ install.packages("natmanager")
 natmanager::install('core')
 
 # Full "batteries included" installation with all packages
-# You need a GitHub account and personal access token (PAT) for this
+# It is recommended to have a GitHub account and personal access token (PAT) for this full
+# batteries installation. However if you don't have one, then natmanager's default PAT will be used.
 natmanager::install('natverse')
 
 #you can also install non-natverse packages like below, this feature is useful if you want to avoid

@@ -20,6 +20,17 @@ have_xquartz <- function() {
 }
 
 system_requirements_ok <- function() {
+
+  #Step:1, Check version of R..
+  if(grepl("3.5", getRversion())) { #check if version is 3.5.x
+    warning(paste0("Update your R version, it is recommended to use > 3.5 ",
+                   'and your current version is: ', getRversion()))
+  }else if(getRversion() < package_version("3.5.0")){
+    stop(paste0("Update your R version, it is recommended to use > 3.5 ",
+                'and your current version is: ', getRversion()))
+  }
+
+  #Step:2, Check specific softwares that are prerequisites..
   if(isTRUE(.Platform$OS.type == "windows")) {
     return(TRUE)
   }

@@ -52,3 +52,17 @@ test_that("list all natverse repos ", {
   pckgs <- natmanager::list_repo()
   expect_is(pckgs, 'character')
 })
+
+
+test_that("check for versions of R ", {
+
+  mockery::stub(system_requirements_ok, 'getRversion', package_version("4.0"))
+  expect_warning(system_requirements_ok(), regexp = NA)
+
+  mockery::stub(system_requirements_ok, 'getRversion', package_version("3.5"))
+  expect_warning(system_requirements_ok())
+
+  mockery::stub(system_requirements_ok, 'getRversion', package_version("3.4"))
+  expect_error(system_requirements_ok())
+
+})

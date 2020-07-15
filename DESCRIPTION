@@ -25,12 +25,13 @@ Imports:
     gh,
     utils,
     remotes,
-    usethis,
+    usethis (>= 1.5.0),
     curl,
     withr
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
+    mockery,
     rstudioapi
 Encoding: UTF-8
 Language: en-GB

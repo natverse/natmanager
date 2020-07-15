@@ -20,6 +20,22 @@ have_xquartz <- function() {
 }
 
 system_requirements_ok <- function() {
+
+  #Step:1, Check version of R ...
+  rversion <- getRversion()
+  minversion = '3.5.0'
+  recommended = '3.6.0'
+  if(rversion<minversion) {
+    stop(
+      paste0("Please update your R version. The natverse is designed for R >= ",
+             minversion,
+             ' and your current version is: ', rversion))
+  } else if(rversion<recommended) {
+    warning(paste0("We recommend updating your R version to >= ", recommended,
+                   ' but your current version is: ', rversion))
+  }
+
+  #Step:2, Check specific software that are prerequisites ..
   if(isTRUE(.Platform$OS.type == "windows")) {
     return(TRUE)
   }

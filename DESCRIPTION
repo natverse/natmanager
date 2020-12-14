@@ -25,7 +25,7 @@ Imports:
     gh,
     utils,
     remotes,
-    usethis (>= 1.5.0),
+    usethis (>= 2.0.0),
     curl,
     withr
 Suggests: 
@@ -36,4 +36,4 @@ Suggests:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

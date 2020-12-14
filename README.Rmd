@@ -42,5 +42,5 @@ natmanager::install('natverse')
 
 #you can also install non-natverse packages like below, this feature is useful if you want to avoid
 #rate limiting issues from github and errors from warnings while installing packages:
-natmanager::install('flyconnectome/hemibrainr')
+natmanager::install(pkgs = 'flyconnectome/hemibrainr')
 ```

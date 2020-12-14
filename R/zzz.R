@@ -26,7 +26,7 @@
 #' natmanager::check_pat(create=FALSE)
 #' }
 check_pat <- function(create=TRUE) {
-  pat=usethis::github_token()
+  pat=gh::gh_token()
   if (isFALSE(nzchar(pat))  && isFALSE(create)) {
     pat <- paste0("aa01baa46278a",
                   "ab50961f28153",

@@ -1,11 +1,10 @@
-This version of natmanager adds support for installing non-natverse packages, informs the user
-if x-quartz is not installed in MacOS X.
+This version of natmanager fixes bugs related to recent update of the usethis package (on GitHub related APIs).
 
 ## Test environments
 * Installation on multiple OS was validated using
-* Windows(Winbuilder): https://win-builder.r-project.org/D72WIYA4Q2e1/00check.log
-* MacOS(Rhub): https://builder.r-hub.io/status/natmanager_0.4.6.tar.gz-2cc6bb0f10c1547db9723e5ed6cace89
-* Linux(Travis): https://travis-ci.org/github/natverse/natmanager/builds/705471936
+* Windows(Winbuilder): https://builder.r-hub.io/status/natmanager_0.4.7.tar.gz-6bd8ceca974f48d896f851a8a1d846ed
+* MacOS(Rhub): https://builder.r-hub.io/status/natmanager_0.4.7.tar.gz-c44a2f8e26935148e467884f4e7882d5
+* Linux(Travis): https://travis-ci.org/github/natverse/natmanager/builds/749888995
 
 
 ## R CMD check results

@@ -1,3 +1,8 @@
+# natmanager 0.4.7
+
+* Bug fixes due to changes in `usethis` package resulting in deprecation of GitHub related APIs. Bump up version
+  for preparation of package update on `CRAN`
+
 # natmanager 0.4.6
 
 * provide options for installing non-natverse packages via `natmanager`. Bump up version

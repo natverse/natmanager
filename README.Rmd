@@ -30,7 +30,7 @@ The goal of natmanager is to streamline installation of packages from the
 natverse (NeuroAnatomy Toolbox) suite of R packages for computational neuroanatomy. See http://natverse.org/install/ for the full details.
 
 ```{r eval=FALSE, include=TRUE}
-install.packages("natmanager")
+devtools::install_github('natverse/natmanager')
 
 # install core packages to try out the core natverse
 natmanager::install('core')

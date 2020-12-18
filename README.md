@@ -22,7 +22,7 @@ computational neuroanatomy. See <http://natverse.org/install/> for the
 full details.
 
 ``` r
-install.packages("natmanager")
+devtools::install_github('natverse/natmanager')
 
 # install core packages to try out the core natverse
 natmanager::install('core')

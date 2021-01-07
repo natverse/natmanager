@@ -16,10 +16,10 @@ knitr::opts_chunk$set(
 # natmanager
 
 <!-- badges: start -->
-[![natmanager](https://img.shields.io/badge/natmanager-Part%20of%20the%20natverse-a241b6)](https://natverse.github.io)
+[![natmanager](https://img.shields.io/badge/natmanager-Part%20of%20the%20natverse-a241b6)](http://natverse.org/)
 [![CRAN](https://img.shields.io/cran/v/natmanager)](https://cran.r-project.org/package=natmanager)
 [![GitHub](https://img.shields.io/github/v/release/natverse/natmanager)](https://github.com/natverse/natmanager/releases/)
-[![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](https://natverse.github.io/natmanager/reference/)
+[![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](http://natverse.org//natmanager/reference/)
 [![Travis build status](https://travis-ci.org/natverse/natmanager.svg?branch=master)](https://travis-ci.org/natverse/natmanager)
 ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/natmanager)
 
@@ -30,7 +30,7 @@ The goal of natmanager is to streamline installation of packages from the
 natverse (NeuroAnatomy Toolbox) suite of R packages for computational neuroanatomy. See http://natverse.org/install/ for the full details.
 
 ```{r eval=FALSE, include=TRUE}
-devtools::install_github('natverse/natmanager')
+install.packages('natmanager')
 
 # install core packages to try out the core natverse
 natmanager::install('core')

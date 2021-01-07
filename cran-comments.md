@@ -2,9 +2,9 @@ This version of natmanager fixes bugs related to recent update of the usethis pa
 
 ## Test environments
 * Installation on multiple OS was validated using
-* Windows(Winbuilder): https://win-builder.r-project.org/L5RegCBhDHH6/
-* MacOS(Rhub): https://builder.r-hub.io/status/natmanager_0.4.7.tar.gz-dbd531f603f3978cf4a667581f633942
-* Linux(Travis): https://travis-ci.org/github/natverse/natmanager/builds/749888995
+* Windows(Winbuilder): https://builder.r-hub.io/status/natmanager_0.4.7.tar.gz-5545357cde406d5a41874beb79f4e333
+* MacOS(Rhub): https://builder.r-hub.io/status/natmanager_0.4.7.tar.gz-c2191e7e69ea254973bfc466378b6203
+* Linux(Travis): https://travis-ci.org/github/natverse/natmanager/builds/753339160
 
 
 ## R CMD check results

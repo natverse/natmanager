@@ -65,7 +65,7 @@ jobs:
           pak::pkg_system_requirements("rcmdcheck", execute = TRUE)
         shell: Rscript {0}
         
-       - name: Install xquartz
+      - name: Install xquartz
         run: |
           if [ "$RUNNER_OS" == "macOS" ]; then
             brew install --cask xquartz

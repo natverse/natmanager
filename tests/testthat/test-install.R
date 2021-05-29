@@ -1,4 +1,4 @@
-liblocs <- "/Users/runner/work/_temp/Library"
+liblocs <- "/home/runner/work/_temp/Library"
 
 r = getOption("repos")
 r["CRAN"] = "https://cloud.r-project.org"

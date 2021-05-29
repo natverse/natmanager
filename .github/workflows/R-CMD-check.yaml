@@ -15,19 +15,16 @@ name: R-CMD-check
 jobs:
   R-CMD-check:
     runs-on: ${{ matrix.config.os }}
-
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-
     strategy:
-      fail-fast: false
       matrix:
         os: macos-latest
         include:
         - os: macos-latest
-            r: release
-            INSTALL_DEPS: brew install --cask xquartz
-            CC: clang
-            CXX: clang++   
+          r: release
+          INSTALL_DEPS: brew install --cask xquartz
+          CC: clang
+          CXX: clang++   
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true

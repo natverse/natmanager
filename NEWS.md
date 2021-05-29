@@ -1,3 +1,9 @@
+# natmanager 0.4.8
+
+* Update to new style GitHub PAT
+* Recommend R > 4.0 for natverse
+* catch error in some situations when no GitHub PAT is set
+
 # natmanager 0.4.7
 
 * Bug fixes due to changes in `usethis` package resulting in deprecation of GitHub related APIs. Bump up version

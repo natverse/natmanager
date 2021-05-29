@@ -26,7 +26,8 @@
 #' natmanager::check_pat(create=FALSE)
 #' }
 check_pat <- function(create=TRUE) {
-  pat=gh::gh_token()
+  pat=try(gh::gh_token(), silent = TRUE)
+  if(inherits(pat, 'try-error')) pat=""
   if (isFALSE(nzchar(pat))  && isFALSE(create)) {
     pat <- paste0("ghp_",
                   "k4WlWl4B3trj1",

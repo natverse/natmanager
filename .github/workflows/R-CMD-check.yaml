@@ -65,20 +65,27 @@ jobs:
           pak::pkg_system_requirements("rcmdcheck", execute = TRUE)
         shell: Rscript {0}
         
-      - name: Install xquartz
+      - name: Update Homebrew
+        if: runner.os == 'macOS'
         run: |
-          if [ "$RUNNER_OS" == "macOS" ]; then
-            brew install --cask xquartz
-          elif [ "$RUNNER_OS" == "Linux" ]; then
-            echo "nothing to install here"
-          elif [ "$RUNNER_OS" == "Windows" ]; then
-            echo "nothing to install here"
-          else
-            echo "$RUNNER_OS not supported"
-            exit 1
-          fi
-        shell: bash
-
+          brew update --preinstall
+          cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/foo.rb" > .github/brew-formulae
+          
+      - name: Configure Homebrew cache
+        if: runner.os == 'macOS'
+        uses: actions/cache@v2
+        with:
+            path: |
+                ~/Library/Caches/Homebrew/foo--*
+                ~/Library/Caches/Homebrew/downloads/*--foo-*
+            key: brew-${{ hashFiles('.github/brew-formulae') }}
+            restore-keys: brew-
+            
+      - name: Install Homebrew dependencies
+        if: runner.os == 'macOS'
+        run: |
+            env HOMEBREW_NO_AUTO_UPDATE=1 brew install --cask xquartz
+        
       - name: Install dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)

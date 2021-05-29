@@ -32,7 +32,8 @@ Suggests:
     testthat (>= 2.1.0),
     knitr,
     mockery,
-    rstudioapi
+    rstudioapi,
+    covr
 Encoding: UTF-8
 Language: en-GB
 LazyData: true

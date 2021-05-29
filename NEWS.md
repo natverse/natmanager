@@ -1,7 +1,7 @@
 # natmanager 0.4.8
 
 * Update to new style GitHub PAT
-* Recommend R > 4.0.2 for natverse
+* Recommend R > 4.0.2 for `natverse`
 * catch error in some situations when no GitHub PAT is set
 
 # natmanager 0.4.7

@@ -24,7 +24,7 @@ jobs:
         os: [macos-latest]
         include:
         - os: macos-latest
-          r: 'release'
+          r: release
           INSTALL_DEPS: brew install --cask xquartz
           CC: clang
           CXX: clang++   

@@ -24,7 +24,7 @@ system_requirements_ok <- function() {
   #Step:1, Check version of R ...
   rversion <- getRversion()
   minversion = '3.5.0'
-  recommended = '4.0'
+  recommended = '4.0.2'
   if(rversion<minversion) {
     stop(
       paste0("Please update your R version. The natverse is designed for R >= ",

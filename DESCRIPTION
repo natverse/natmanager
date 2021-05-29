@@ -22,7 +22,7 @@ Description: Provides streamlined installation for packages from the 'natverse',
     'GITHUB_PAT'. 'natmanager' will help the end user set this up if necessary.
 License: GPL-3
 Imports:
-    gh,
+    gh (>= 1.2.1),
     utils,
     remotes,
     usethis (>= 2.0.0),

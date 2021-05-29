@@ -56,7 +56,7 @@ test_that("list all natverse repos ", {
 
 test_that("check for versions of R ", {
 
-  mockery::stub(system_requirements_ok, 'getRversion', package_version("4.0"))
+  mockery::stub(system_requirements_ok, 'getRversion', package_version("4.0.2"))
   expect_warning(system_requirements_ok(), regexp = NA)
 
   mockery::stub(system_requirements_ok, 'getRversion', package_version("3.5"))

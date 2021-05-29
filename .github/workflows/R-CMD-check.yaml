@@ -62,13 +62,15 @@ jobs:
         shell: Rscript {0}
         
       - name: Install system dependencies/bash
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y libglpk-dev
-        if: runner.os == 'macOS'
-        run: |
-          brew install --cask xquartz
+        run:   |
+         if [ "$RUNNER_OS" == "Linux" ]; then
+              sudo apt-get update -y
+              sudo apt-get install -y libglpk-dev
+         elif [ "$RUNNER_OS" == "macOS" ]; then
+              brew install --cask xquartz
+         else
+              echo "$RUNNER_OS no specific install required"
+         fi
         shell: bash
                 
       - name: Install dependencies

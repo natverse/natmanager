@@ -1,6 +1,6 @@
 ^natmanager\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
-^.travis\.yml$
 ^docs$
 ^cran-comments\.md$
+^\.github$

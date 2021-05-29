@@ -69,15 +69,15 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew update --preinstall
-          cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/foo.rb" > .github/brew-formulae
+          cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/xquartz.rb" > .github/brew-formulae
           
       - name: Configure Homebrew cache
         if: runner.os == 'macOS'
         uses: actions/cache@v2
         with:
             path: |
-                ~/Library/Caches/Homebrew/foo--*
-                ~/Library/Caches/Homebrew/downloads/*--foo-*
+                ~/Library/Caches/Homebrew/xquartz--*
+                ~/Library/Caches/Homebrew/downloads/*--xquartz-*
             key: brew-${{ hashFiles('.github/brew-formulae') }}
             restore-keys: brew-
             

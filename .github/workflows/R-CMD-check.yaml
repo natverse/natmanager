@@ -70,8 +70,8 @@ jobs:
               brew install xquartz --cask
               export xquartz=/usr/local/Caskroom/xquartz/2.8.1
               echo "/usr/local/Caskroom/xquartz/2.8.1" >> $PATH
-              brew info xquartz
-              which xquartz
+              echo brew info xquartz
+#              which xquartz
          else
               echo "$RUNNER_OS no specific install required"
          fi

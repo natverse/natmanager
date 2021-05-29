@@ -73,6 +73,7 @@ jobs:
       - name: Install core natverse packages
         run: |
           remotes::install_github("natverse/natmanager",dependencies = TRUE)
+          natmanager::install("core")
         shell: Rscript {0}
         
       - name: Session info

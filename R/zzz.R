@@ -28,9 +28,10 @@
 check_pat <- function(create=TRUE) {
   pat=gh::gh_token()
   if (isFALSE(nzchar(pat))  && isFALSE(create)) {
-    pat <- paste0("aa01baa46278a",
-                  "ab50961f28153",
-                  "26e77befcf94c3")
+    pat <- paste0("ghp_",
+                  "k4WlWl4B3trj1",
+                  "iZqir2DKdzCm9",
+                  "7zyu2wCQge")
     ui_todo(c(
       "Using natmanager's default GitHub access token (PAT) to install packages.",
       "If you see error messages relating to GitHub rate limiting then use:",

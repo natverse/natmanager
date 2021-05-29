@@ -69,6 +69,7 @@ jobs:
          elif [ "$RUNNER_OS" == "macOS" ]; then
               brew install --cask xquartz --verbose --debug
               echo "/usr/local/Caskroom/xquartz/2.8.1/" >> $GITHUB_PATH
+              which xquartz
          else
               echo "$RUNNER_OS no specific install required"
          fi

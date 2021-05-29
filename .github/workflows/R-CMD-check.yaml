@@ -68,7 +68,7 @@ jobs:
               sudo apt-get install -y libglpk-dev
          elif [ "$RUNNER_OS" == "macOS" ]; then
               brew install xquartz --cask
-              echo brew info xquartz
+              brew --prefix xquartz
          else
               echo "$RUNNER_OS no specific install required"
          fi

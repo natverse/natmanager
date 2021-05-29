@@ -68,16 +68,16 @@ jobs:
        - name: Install xquartz
         if: runner.os == 'Linux'
         run: |
-         if [ "$RUNNER_OS" == "macOS" ]; then
-              brew install --cask xquartz
-         elif [ "$RUNNER_OS" == "Linux" ]; then
-              echo "nothing to install here"
-         elif [ "$RUNNER_OS" == "Windows" ]; then
-              echo "nothing to install here"
-         else
-              echo "$RUNNER_OS not supported"
-              exit 1
-         fi
+          if [ "$RUNNER_OS" == "macOS" ]; then
+            brew install --cask xquartz
+          elif [ "$RUNNER_OS" == "Linux" ]; then
+            echo "nothing to install here"
+          elif [ "$RUNNER_OS" == "Windows" ]; then
+            echo "nothing to install here"
+          else
+            echo "$RUNNER_OS not supported"
+            exit 1
+          fi
         shell: bash
 
       - name: Install dependencies

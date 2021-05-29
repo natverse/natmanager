@@ -18,11 +18,15 @@ jobs:
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
     strategy:
       matrix:
-        os: macos-latest
+        os: [macos-latest, ubuntu-latest]
         include:
         - os: macos-latest
           r: release
           INSTALL_DEPS: brew install --cask xquartz
+          CC: clang
+          CXX: clang++ 
+        - os: ubuntu-latest
+          r: release
           CC: clang
           CXX: clang++   
 

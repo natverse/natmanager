@@ -79,7 +79,7 @@ jobs:
       - name: temp
         run: |
           Sys.getenv("PATH")
-          .rs.restartR()
+          startup::restart()
           Sys.which("Xquartz")
         shell: Rscript {0}
                 

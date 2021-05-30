@@ -3,6 +3,7 @@
 * Update to new style GitHub PAT
 * Recommend R > 4.0.2 for `natverse`
 * catch error in some situations when no GitHub PAT is set
+* moved CI to GitHub actions
 
 # natmanager 0.4.7
 

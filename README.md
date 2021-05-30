@@ -12,6 +12,7 @@
 [![R-CMD-check](https://github.com/natverse/natmanager/workflows/R-CMD-check/badge.svg)](https://github.com/natverse/natmanager/actions)
 ![CRAN
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/natmanager)
+[![codecov](https://codecov.io/gh/natverse/natmanager/branch/master/graph/badge.svg?token=jgs2AqL3xP)](https://codecov.io/gh/natverse/natmanager)
 <!-- badges: end -->
 
 The goal of natmanager is to streamline installation of packages from

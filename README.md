@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![natmanager](https://img.shields.io/badge/natmanager-Part%20of%20the%20natverse-a241b6)](http://natverse.org/)
+[![natmanager](https://img.shields.io/badge/natmanager-Part%20of%20the%20natverse-a241b6)](https://natverse.org/)
 [![CRAN](https://img.shields.io/cran/v/natmanager)](https://cran.r-project.org/package=natmanager)
 [![GitHub](https://img.shields.io/github/v/release/natverse/natmanager)](https://github.com/natverse/natmanager/releases/)
 [![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](http://natverse.org//natmanager/reference/)
@@ -17,7 +17,7 @@ Downloads](http://cranlogs.r-pkg.org/badges/grand-total/natmanager)
 
 The goal of natmanager is to streamline installation of packages from
 the natverse (NeuroAnatomy Toolbox) suite of R packages for
-computational neuroanatomy. See <http://natverse.org/install/> for the
+computational neuroanatomy. See <https://natverse.org/install/> for the
 full details.
 
 ``` r

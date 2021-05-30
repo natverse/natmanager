@@ -70,11 +70,16 @@ jobs:
               brew info xquartz
               brew install xquartz --cask --verbose --debug
               brew info xquartz
-              ls /usr/local/Caskroom/xquartz/2.8.1
+              echo "/usr/local/Caskroom/xquartz/2.8.1/" >> $GITHUB_PATH
          else
               echo "$RUNNER_OS no specific install required"
          fi
         shell: bash
+        
+      - name: temp
+        run: |
+          Sys.which('Xquartz')
+        shell: Rscript {0}
                 
       - name: Install dependencies
         run: |

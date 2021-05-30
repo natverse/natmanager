@@ -40,13 +40,13 @@ check_pat <- function(create=TRUE) {
   } else if (isFALSE(nzchar(pat))) {
     if (interactive()) {
       ui_oops("You should have a GitHub account and PAT (Personal Access Token) to install the full natverse!")
-      ui_todo("Please read http://natverse.org/install/ for details!")
+      ui_todo("Please read https://natverse.org/install/ for details!")
       message("")
       res=ui_yeah("Shall I open the help page for you?")
       if(isTRUE(res)) {
-        browseURL("http://natverse.org/install")
+        browseURL("https://natverse.org/install")
       } else {
-        ui_todo("OK. But please do read http://natverse.org/install/ for details!")
+        ui_todo("OK. But please do read https://natverse.org/install/ for details!")
       }
       message("")
       res=ui_yeah("Would you like to create a GitHub PAT (Personal Access Token) now?")
@@ -58,7 +58,7 @@ check_pat <- function(create=TRUE) {
       ui_stop("No GITHUB_PAT set")
     } else {
       stop("Please run natmanager::install() in an interactive R session!\n",
-           "See http://natverse.org/install/ for details!")
+           "See https://natverse.org/install/ for details!")
     }
   } else{
     # nothing to do. Only put message if we were considering making a PAT

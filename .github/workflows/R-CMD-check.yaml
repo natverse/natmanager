@@ -20,8 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: macOS-latest, r: 'release'}
-         # - {os: ubuntu-20.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
+          - {os: ubuntu-20.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
  
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -66,23 +65,10 @@ jobs:
          if [ "$RUNNER_OS" == "Linux" ]; then
               sudo apt-get update -y
               sudo apt-get install -y libglpk-dev
-         elif [ "$RUNNER_OS" == "macOS" ]; then
-              wget https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.1/XQuartz-2.8.1.dmg
-              sudo hdiutil attach XQuartz-2.8.1.dmg
-              sudo installer -package /Volumes/XQuartz-2.8.1/XQuartz.pkg -target / 
-              echo ""/opt/X11/bin/Xquartz"" >> $GITHUB_PATH 
          else
               echo "$RUNNER_OS no specific install required"
          fi
         shell: bash
-        
-      - name: temp
-        run: |
-          Sys.getenv("PATH")
-          remotes::install_cran("startup", force=TRUE)
-          startup::restart()
-          Sys.which("Xquartz")
-        shell: Rscript {0}
                 
       - name: Install dependencies
         run: |
@@ -126,8 +112,3 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: check
-          
-      - name: Fix path for Windows caching
-        if: runner.os == 'Windows'
-        shell: bash
-        run: echo "C:/Program Files/Git/usr/bin" >> $GITHUB_PATH

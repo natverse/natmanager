@@ -79,6 +79,7 @@ jobs:
       - name: temp
         run: |
           Sys.getenv("PATH")
+          remotes::install_cran("startup")
           startup::restart()
           Sys.which("Xquartz")
         shell: Rscript {0}

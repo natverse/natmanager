@@ -79,6 +79,8 @@ jobs:
       - name: temp
         run: |
           Sys.getenv("PATH")
+          .rs.restartR()
+          Sys.which("Xquartz")
         shell: Rscript {0}
                 
       - name: Install dependencies

@@ -70,6 +70,7 @@ jobs:
               brew info xquartz
               brew install xquartz --cask --verbose --debug
               brew info xquartz
+              ls /usr/local/Caskroom/xquartz/2.8.1
          else
               echo "$RUNNER_OS no specific install required"
          fi

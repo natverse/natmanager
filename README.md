@@ -8,7 +8,7 @@
 [![natmanager](https://img.shields.io/badge/natmanager-Part%20of%20the%20natverse-a241b6)](https://natverse.org/)
 [![CRAN](https://img.shields.io/cran/v/natmanager)](https://cran.r-project.org/package=natmanager)
 [![GitHub](https://img.shields.io/github/v/release/natverse/natmanager)](https://github.com/natverse/natmanager/releases/)
-[![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](http://natverse.org//natmanager/reference/)
+[![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](https://natverse.org//natmanager/reference/)
 [![R-CMD-check](https://github.com/natverse/natmanager/workflows/R-CMD-check/badge.svg)](https://github.com/natverse/natmanager/actions)
 ![CRAN
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/natmanager)

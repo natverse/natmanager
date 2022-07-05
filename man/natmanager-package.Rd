@@ -6,11 +6,7 @@
 \alias{natmanager-package}
 \title{natmanager: Install the 'Natverse' Packages from Scratch}
 \description{
-Provides streamlined installation for packages from the 'natverse',
-    a suite of R packages for computational neuroanatomy built on top of the
-    'nat' 'NeuroAnatomy Toolbox' package. Installation of the complete
-    'natverse' suite requires a 'GitHub' user account and personal access token
-    'GITHUB_PAT'. 'natmanager' will help the end user set this up if necessary.
+Provides streamlined installation for packages from the 'natverse', a suite of R packages for computational neuroanatomy built on top of the 'nat' 'NeuroAnatomy Toolbox' package. Installation of the complete 'natverse' suite requires a 'GitHub' user account and personal access token 'GITHUB_PAT'. 'natmanager' will help the end user set this up if necessary.
 }
 \examples{
 \dontrun{

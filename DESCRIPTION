@@ -33,7 +33,8 @@ Suggests:
     knitr,
     mockery,
     rstudioapi,
-    covr
+    covr,
+    spelling
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.1.1

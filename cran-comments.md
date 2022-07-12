@@ -4,8 +4,8 @@ This version of natmanager is updated due to previous version being archived on 
 
 ## Test environments
 * Installation on multiple OS was validated using
-* Windows(Win-builder): https://win-builder.r-project.org/6zUXoipqpH33/00check.log
-* MacOS(Rhub): https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-1de20effb2eb49a7b86eea120960c0c4
+* Windows(Win-builder): https://win-builder.r-project.org/Z8F3T7Gzr1T3/00check.log
+* MacOS(Rhub): https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-b2bb3fb4189f4d99845464a2cb5b0aef
 
 
 ## R CMD check results

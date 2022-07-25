@@ -35,20 +35,18 @@
 #' @examples
 #' \dontrun{
 #' # install core packages to try out the core natverse
-#' user_input <- readline("Would you like to run examples with install packages? (y/n)  ")
-#' if(user_input != 'y') stop('Exiting examples')
+#' if(is.interactive()) {
 #' natmanager::install('core')
-#'
+#' }
 #' # Full "batteries included" installation with all packages
-#' user_input <- readline("Would you like to run examples with install packages? (y/n)  ")
-#' if(user_input != 'y') stop('Exiting examples')
+#' if(is.interactive()) {
 #' natmanager::install('natverse')
-#'
+#' }
 #' # Install natverse, non-natverse package
 #' # for natverse packages no need to specify the repo
-#' user_input <- readline("Would you like to run examples with install packages? (y/n)  ")
-#' if(user_input != 'y') stop('Exiting examples')
+#' if(is.interactive()) {
 #' natmanager::install(pkgs=c('nat.jrcbrains','flyconnectome/hemibrainr'))
+#' }
 #' }
 install <- function(collection = c('core', 'natverse'), pkgs=NULL,
                     dependencies = TRUE,

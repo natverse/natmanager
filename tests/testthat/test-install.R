@@ -49,6 +49,12 @@ test_that("list all natverse repos ", {
 
 test_that("check for versions of R ", {
 
+  mockery_status = suppressWarnings(!require("mockery"))
+  #Run this test only if mockery package is installed
+  if(mockery_status){
+    skip("Skipping as mockery package is not installed")
+  }
+
   mockery::stub(system_requirements_ok, 'getRversion', package_version("4.0.2"))
   expect_warning(system_requirements_ok(), regexp = NA)
 

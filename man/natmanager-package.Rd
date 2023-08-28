@@ -25,11 +25,11 @@ natmanager::install('natverse')
 \code{\link{install}}
 }
 \author{
-\strong{Maintainer}: Sridhar Jagannathan \email{j.sridharrajan@gmail.com} (\href{https://orcid.org/0000-0002-2078-1145}{ORCID})
+\strong{Maintainer}: Gregory Jefferis \email{jefferis@gmail.com} (\href{https://orcid.org/0000-0002-0587-9355}{ORCID})
 
 Authors:
 \itemize{
-  \item Gregory Jefferis \email{jefferis@gmail.com} (\href{https://orcid.org/0000-0002-0587-9355}{ORCID})
+  \item Sridhar Jagannathan \email{j.sridharrajan@gmail.com} (\href{https://orcid.org/0000-0002-2078-1145}{ORCID})
 }
 
 }

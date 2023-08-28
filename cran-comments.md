@@ -1,10 +1,13 @@
-This version of natmanager fixes bugs related to recent update of the GitHub PATs, recommended r version.
+This version of natmanager is updated due to previous version being archived on CRAN
+* Fixes URL redirects from codecov
+* Change examples from 'donttest' to 'dontrun' and run them only on interactive platforms
+* Protect 'mockery' api in testcases
 
 ## Test environments
 * Installation on multiple OS was validated using
-* Windows(Rhub): https://builder.r-hub.io/status/natmanager_0.4.8.tar.gz-c20a5e74970acc2d68453e3f27fb1f6b
-* MacOS(Rhub): https://builder.r-hub.io/status/natmanager_0.4.8.tar.gz-fbcc91eca38a211bdb4d0ab39850797d
-* Linux(Rhub): https://builder.r-hub.io/status/natmanager_0.4.8.tar.gz-25c5e57e29dc2f6c3fec0bd2b83c59fc
+* Windows(Rhub): https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-87d17858b2724514a54ac01a7d6f0874
+* MacOS(Rhub):   https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-b417b59622094ab98e6c8efb1da8fecd
+* Linux(Rhub):   https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-30f0ce2602e2470a993bf07333ab7a53
 
 
 ## R CMD check results

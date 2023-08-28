@@ -68,14 +68,18 @@ the same PAT.}
 \examples{
 \dontrun{
 # install core packages to try out the core natverse
+if(is.interactive()) {
 natmanager::install('core')
-
+}
 # Full "batteries included" installation with all packages
+if(is.interactive()) {
 natmanager::install('natverse')
-
+}
 # Install natverse, non-natverse package
 # for natverse packages no need to specify the repo
+if(is.interactive()) {
 natmanager::install(pkgs=c('nat.jrcbrains','flyconnectome/hemibrainr'))
+}
 }
 \dontrun{
 # Check status of GitHub PAT and create one if required

@@ -1,6 +1,6 @@
 Package: natmanager
 Title: Install the 'Natverse' Packages from Scratch
-Version: 0.4.8
+Version: 0.4.9
 Authors@R: c(
     person(given = "Sridhar",
            family = "Jagannathan",
@@ -33,7 +33,8 @@ Suggests:
     knitr,
     mockery,
     rstudioapi,
-    covr
+    covr,
+    spelling
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.1.1

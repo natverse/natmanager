@@ -7,7 +7,7 @@
 #' @return Character vector of repository names
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' natmanager::list_repo()
 #' }
 list_repo <- function(orgname = 'natverse') {

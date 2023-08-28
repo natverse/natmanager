@@ -2,11 +2,14 @@
 #' @examples
 #' \dontrun{
 #' # install core packages to try out the core natverse
+#' if(is.interactive()) {
 #' natmanager::install('core')
-#'
+#' }
 #' # Full "batteries included" installation with all packages
 #' # You need a GitHub account and personal access token (PAT) for this
+#' if(is.interactive()) {
 #' natmanager::install('natverse')
+#' }
 #' }
 #' @keywords internal
 "_PACKAGE"

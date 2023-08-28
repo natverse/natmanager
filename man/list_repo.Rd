@@ -17,7 +17,7 @@ by default this will list all the repositories inside the
   `natverse` organization.
 }
 \examples{
-\donttest{
+\dontrun{
 natmanager::list_repo()
 }
 }

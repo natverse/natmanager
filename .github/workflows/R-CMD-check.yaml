@@ -44,14 +44,14 @@ jobs:
           needs: check
 
       - name: Install system dependencies for igraph (nat)
-          run:   |
-           if [ "$RUNNER_OS" == "Linux" ]; then
-                sudo apt-get update -y
-                sudo apt-get install -y libglpk-dev
-           else
-                echo "$RUNNER_OS no specific install required"
-           fi
-          shell: bash
+        run: |
+          if [ "$RUNNER_OS" == "Linux" ]; then
+            sudo apt-get update -y
+            sudo apt-get install -y libglpk-dev
+          else
+            echo "$RUNNER_OS no specific install required"
+          fi
+        shell: bash
 
       - uses: r-lib/actions/check-r-package@v2
 

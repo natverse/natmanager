@@ -25,12 +25,19 @@
 #'   \code{natverse}. See Description for more information.
 #' @param pkgs A character vector of package names specifying natverse packages
 #'   to install. When present overrides the \code{collection} argument.
+#' @param method Whether to use the \code{\link{pak}} (now the default) or
+#'   \code{\link[remotes]{install_github}} package for installation.
 #' @param dependencies Which dependencies you want to install see
+#'   \code{pak::\link[pak]{pkg_install}} or
 #'   \code{\link[remotes]{install_github}}.
-#' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}.
+#' @param upgrade.dependencies Whether to install dependencies of requested
+#'   packages See the \code{upgrade} argument of
+#'   \code{\link[remotes]{install_github}} for details. The default will go
+#'   ahead and always do this is as necessary.
+#' @param ... extra arguments to pass to \code{pak::\link[pak]{pkg_install}} or
+#'   \code{remotes::\link[remotes]{install_github}}.
 #' @importFrom utils install.packages
 #' @importFrom usethis ui_info
-#' @inheritParams selfupdate
 #' @export
 #' @examples
 #' \dontrun{
@@ -50,7 +57,8 @@
 #' }
 install <- function(collection = c('core', 'natverse'), pkgs=NULL,
                     dependencies = TRUE,
-                    upgrade.dependencies='always', ...) {
+                    upgrade.dependencies=TRUE,
+                    method=c("pak", "remotes"), ...) {
 
   collection=match.arg(collection)
   if(is.null(pkgs)) {
@@ -83,13 +91,19 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
 
   # Update if necessary and stop the rest of the update process if we had to
   if(smartselfupdate()) return(invisible(NULL))
-
-  res <- remotes::install_github(
+  method=match.arg(method)
+  res <- if(method=='pak') {
+    pak::pkg_install(repos,
+                     upgrade = upgrade.dependencies,
+                     dependencies = dependencies, ...)
+  } else {
+  remotes::install_github(
     repos,
     dependencies = dependencies,
     upgrade = upgrade.dependencies,
     ...
   )
+  }
 
   if(isTRUE(collection=='core')) {
     ui_info("Load the core nat package with {ui_code('library(nat)')}")

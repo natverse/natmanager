@@ -9,7 +9,8 @@ install(
   collection = c("core", "natverse"),
   pkgs = NULL,
   dependencies = TRUE,
-  upgrade.dependencies = "always",
+  upgrade.dependencies = TRUE,
+  method = c("pak", "remotes"),
   ...
 )
 
@@ -24,13 +25,19 @@ install. The current options are \code{core}, the default, or
 to install. When present overrides the \code{collection} argument.}
 
 \item{dependencies}{Which dependencies you want to install see
+\code{pak::\link[pak]{pkg_install}} or
 \code{\link[remotes]{install_github}}.}
 
-\item{upgrade.dependencies}{Whether to install dependencies of natmanager.
-See the \code{upgrade} argument of \code{\link[remotes]{install_github}}
-for details. The default will go ahead and always do this is as necessary.}
+\item{upgrade.dependencies}{Whether to install dependencies of requested
+packages See the \code{upgrade} argument of
+\code{\link[remotes]{install_github}} for details. The default will go
+ahead and always do this is as necessary.}
 
-\item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}.}
+\item{method}{Whether to use the \code{\link{pak}} (now the default) or
+\code{\link[remotes]{install_github}} package for installation.}
+
+\item{...}{extra arguments to pass to \code{pak::\link[pak]{pkg_install}} or
+\code{remotes::\link[remotes]{install_github}}.}
 
 \item{create}{Whether to help you create a personal GITHUB_PAT if you do not
 have one set. When \code{create=FALSE} a default PAT will be used if you

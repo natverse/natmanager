@@ -6,8 +6,9 @@
 \usage{
 selfupdate(
   source = c("GITHUB", "CRAN"),
-  upgrade.dependencies = "always",
+  upgrade.dependencies = TRUE,
   force = FALSE,
+  method = c("pak", "remotes"),
   ...
 )
 }
@@ -16,15 +17,19 @@ selfupdate(
 Defaults to GITHUB since this may well have a newer version than the CRAN
 package repository.}
 
-\item{upgrade.dependencies}{Whether to install dependencies of natmanager.
-See the \code{upgrade} argument of \code{\link[remotes]{install_github}}
-for details. The default will go ahead and always do this is as necessary.}
+\item{upgrade.dependencies}{Whether to install dependencies of requested
+packages See the \code{upgrade} argument of
+\code{\link[remotes]{install_github}} for details. The default will go
+ahead and always do this is as necessary.}
 
 \item{force}{Force self update even if there doesn't seem to be an update
 (default \code{FALSE})}
 
-\item{...}{extra arguments to pass to \code{\link[remotes]{install_github}}
-or \code{\link[remotes]{install_cran}}.}
+\item{method}{Whether to use the \code{\link{pak}} (now the default) or
+\code{\link[remotes]{install_github}} package for installation.}
+
+\item{...}{extra arguments to pass to \code{pak::\link[pak]{pkg_install}} or
+\code{remotes::\link[remotes]{install_github}}.}
 }
 \value{
 Logical indicating whether an update was required (invisibly).

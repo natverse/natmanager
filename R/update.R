@@ -3,13 +3,9 @@
 #' @param source Location from which to obtain a newer version of natmanager.
 #'   Defaults to GITHUB since this may well have a newer version than the CRAN
 #'   package repository.
-#' @param ... extra arguments to pass to \code{\link[remotes]{install_github}}
-#'   or \code{\link[remotes]{install_cran}}.
-#' @param upgrade.dependencies Whether to install dependencies of natmanager.
-#'   See the \code{upgrade} argument of \code{\link[remotes]{install_github}}
-#'   for details. The default will go ahead and always do this is as necessary.
 #' @param force Force self update even if there doesn't seem to be an update
 #'   (default \code{FALSE})
+#' @inheritParams install
 #' @return Logical indicating whether an update was required (invisibly).
 #' @importFrom utils browseURL packageVersion
 #' @export
@@ -19,7 +15,8 @@
 #' natmanager::selfupdate()
 #' }
 selfupdate <- function(source = c('GITHUB', 'CRAN'),
-                       upgrade.dependencies='always', force=FALSE, ...) {
+                       upgrade.dependencies=TRUE, force=FALSE,
+                       method=c("pak","remotes"), ...) {
   source <- match.arg(source)
 
   oldVersion=utils::packageVersion('natmanager')
@@ -30,10 +27,15 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
   # only use source packages if essential
   withr::local_options(list(install.packages.compile.from.source='never'))
 
-  if (source == 'CRAN') {
-    remotes::install_cran('natmanager', ...)
+  method=match.arg(method)
+  pkgspec=ifelse(source=='CRAN', "natmanager", "natverse/natmanager")
+  if(method=='pak') {
+    pak::pkg_install(pkgspec, upgrade=upgrade.dependencies, ...)
+  }
+  else if (source == 'CRAN') {
+      remotes::install_cran(pkgspec, ...)
   } else {
-    remotes::install_github('natverse/natmanager',
+    remotes::install_github(pkgspec,
                             upgrade=upgrade.dependencies, force=force, ...)
   }
 

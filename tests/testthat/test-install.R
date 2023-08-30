@@ -4,7 +4,7 @@ test_that("installation works", {
   skip_on_cran()
   on_github=nzchar(Sys.getenv('GITHUB_ACTIONS'))
 
-  if(on_github) "/home/runner/work/_temp/" else tmproot <- tempfile()
+  tmproot <- if(on_github) "/home/runner/work/_temp/" else tempfile()
   if(!file.exists(tmproot))
     dir.create(tmproot, showWarnings = F)
   liblocs <- file.path(tmproot, "Library")

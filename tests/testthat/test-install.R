@@ -1,37 +1,33 @@
-liblocs <- "/home/runner/work/_temp/Library"
-
-r = getOption("repos")
-r["CRAN"] = "https://cloud.r-project.org"
-options(repos = r)
-
 test_that("installation works", {
 
-
-  # This test requires installation and hence only run on github actions..
+  # This test requires installation and should not be run on CRAN
   skip_on_cran()
+  on_github=nzchar(Sys.getenv('GITHUB_ACTIONS'))
 
-  if (!nzchar(Sys.getenv('GITHUB_ACTIONS'))){
-    skip("Skipping as testcase will only be executed on github actions")
-  }
+  tmproot <- if(on_github) "/home/runner/work/_temp/" else tempfile()
+  if(!file.exists(tmproot))
+    dir.create(tmproot, showWarnings = F)
+  liblocs <- file.path(tmproot, "Library")
+  if(!file.exists(liblocs))
+    dir.create(liblocs, showWarnings = F)
+  ucd <- file.path(tmproot, "ucd")
+  on.exit(unlink(tmproot, recursive = T))
 
+  #unset PAT as core installation should be able to run without it
+  # R_USER_CACHE_DIR is required by pak's cache mechanism
+  withr::local_envvar(GITHUB_PAT="",
+                      R_USER_CACHE_DIR=ucd)
 
+  # make sure we have CRAN repo specified
+  r = getOption("repos")
+  r["CRAN"] = "https://cloud.r-project.org"
+  withr::local_options(repos = r)
+
+  # we will use this as signal package to check install has completed
   pkgname <- 'nat.templatebrains'
-
-  if (requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE)){
-    remove.packages(pkgname, lib = liblocs)
-  }
-
-  #unset the pat, as the core installation can run without it..
-  old=Sys.getenv("GITHUB_PAT")
-  Sys.setenv("GITHUB_PAT" = '')
-
   natmanager::install(collection = 'core', dependencies = TRUE,
                       upgrade.dependencies = TRUE, lib = liblocs)
-  expect_equal(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE),TRUE)
-
-  #Set the pat again..
-  Sys.setenv("GITHUB_PAT" = old)
-
+  expect_true(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE))
 })
 
 

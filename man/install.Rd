@@ -24,14 +24,16 @@ install. The current options are \code{core}, the default, or
 \item{pkgs}{A character vector of package names specifying natverse packages
 to install. When present overrides the \code{collection} argument.}
 
-\item{dependencies}{Which dependencies you want to install see
-\code{pak::\link[pak]{pkg_install}} or
-\code{\link[remotes]{install_github}}.}
+\item{dependencies}{Which dependencies you want to install. The default value
+(\code{TRUE}) will install all dependencies, \code{NA} will install only
+hard (essential) dependencies, while \code{F} will not install any
+dependencies (not recommended). See \code{pak::\link[pak]{pkg_install}} or
+\code{\link[remotes]{install_github}} for further details.}
 
 \item{upgrade.dependencies}{Whether to install dependencies of requested
 packages See the \code{upgrade} argument of
-\code{\link[remotes]{install_github}} for details. The default will go
-ahead and always do this is as necessary.}
+\code{\link[remotes]{install_github}} for details. The default value
+(\code{TRUE}) will go ahead and upgrade all dependencies as necessary.}
 
 \item{method}{Whether to use the \code{\link{pak}} (now the default) or
 \code{\link[remotes]{install_github}} package for installation.}

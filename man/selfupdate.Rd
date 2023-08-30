@@ -19,8 +19,8 @@ package repository.}
 
 \item{upgrade.dependencies}{Whether to install dependencies of requested
 packages See the \code{upgrade} argument of
-\code{\link[remotes]{install_github}} for details. The default will go
-ahead and always do this is as necessary.}
+\code{\link[remotes]{install_github}} for details. The default value
+(\code{TRUE}) will go ahead and upgrade all dependencies as necessary.}
 
 \item{force}{Force self update even if there doesn't seem to be an update
 (default \code{FALSE})}

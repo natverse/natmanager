@@ -27,13 +27,15 @@
 #'   to install. When present overrides the \code{collection} argument.
 #' @param method Whether to use the \code{\link{pak}} (now the default) or
 #'   \code{\link[remotes]{install_github}} package for installation.
-#' @param dependencies Which dependencies you want to install see
-#'   \code{pak::\link[pak]{pkg_install}} or
-#'   \code{\link[remotes]{install_github}}.
+#' @param dependencies Which dependencies you want to install. The default value
+#'   (\code{TRUE}) will install all dependencies, \code{NA} will install only
+#'   hard (essential) dependencies, while \code{F} will not install any
+#'   dependencies (not recommended). See \code{pak::\link[pak]{pkg_install}} or
+#'   \code{\link[remotes]{install_github}} for further details.
 #' @param upgrade.dependencies Whether to install dependencies of requested
 #'   packages See the \code{upgrade} argument of
-#'   \code{\link[remotes]{install_github}} for details. The default will go
-#'   ahead and always do this is as necessary.
+#'   \code{\link[remotes]{install_github}} for details. The default value
+#'   (\code{TRUE}) will go ahead and upgrade all dependencies as necessary.
 #' @param ... extra arguments to pass to \code{pak::\link[pak]{pkg_install}} or
 #'   \code{remotes::\link[remotes]{install_github}}.
 #' @importFrom utils install.packages

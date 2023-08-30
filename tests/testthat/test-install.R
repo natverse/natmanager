@@ -17,6 +17,7 @@ test_that("installation works", {
   #unset PAT as core installation should be able to run without it
   # R_USER_CACHE_DIR is required by pak's cache mechanism
   withr::local_envvar(GITHUB_PAT="",
+                      R_COMPILE_AND_INSTALL_PACKAGES="never",
                       R_USER_CACHE_DIR=ucd)
 
   # make sure we have CRAN repo specified
@@ -27,7 +28,7 @@ test_that("installation works", {
   # we will use this as signal package to check install has completed
   pkgname <- 'nat.templatebrains'
   natmanager::install(collection = 'core', dependencies = TRUE,
-                      upgrade.dependencies = TRUE, lib = liblocs)
+                      upgrade.dependencies = FALSE, lib = liblocs)
   expect_true(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE))
 })
 

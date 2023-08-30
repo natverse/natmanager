@@ -8,13 +8,17 @@ test_that("installation works", {
   if(!file.exists(tmproot))
     dir.create(tmproot, showWarnings = F)
   # use a temporary location except on github actions
-  liblocs <- if(on_github) .libPaths()[[1L]] else {
+  if(on_github) {
+    liblocs <- .libPaths()[[1L]]
+    # pak warns against this but otherwise have sysreqs problems
+    ucd=rappdirs::user_cache_dir()
+  } else {
     on.exit(unlink(tmproot, recursive = T))
-    file.path(tmproot, "Library")
+    liblocs <- file.path(tmproot, "Library")
+    ucd <- file.path(tmproot, "ucd")
   }
   if(!file.exists(liblocs))
     dir.create(liblocs, showWarnings = F)
-  ucd <- file.path(tmproot, "ucd")
   if(!file.exists(ucd))
     dir.create(ucd, showWarnings = F)
 

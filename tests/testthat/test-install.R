@@ -36,24 +36,17 @@ test_that("installation works", {
 
 
 test_that("list all natverse repos ", {
+  # We need a GITHUB_PAT to query the github API
+  skip_if_not(nzchar(Sys.getenv('GITHUB_PAT')), "Skipping as Github PAT unset")
 
-  #Run tests on github actions only if the GITHUB_PAT is set
-  if (!nzchar(Sys.getenv('GITHUB_PAT'))) {
-    skip("Skipping as Github PAT is not set")
-  }
-
-  pckgs <- natmanager::list_repo()
-  expect_is(pckgs, 'character')
+  pkgs <- natmanager::list_repo()
+  expect_is(pkgs, 'character')
+  expect_true("nat" %in% pkgs)
 })
 
 
 test_that("check for versions of R ", {
-
-  mockery_status = suppressWarnings(!require("mockery"))
-  #Run this test only if mockery package is installed
-  if(mockery_status){
-    skip("Skipping as mockery package is not installed")
-  }
+  skip_if_not_installed('mockery')
 
   mockery::stub(system_requirements_ok, 'getRversion', package_version("4.0.2"))
   expect_warning(system_requirements_ok(), regexp = NA)

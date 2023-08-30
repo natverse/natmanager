@@ -4,15 +4,15 @@ test_that("installation works", {
   skip_on_cran()
   on_github=nzchar(Sys.getenv('GITHUB_ACTIONS'))
 
-  # if(on_github) "/home/runner/work/_temp/" else
-  tmproot <- tempfile()
+  if(on_github) "/home/runner/work/_temp/" else tmproot <- tempfile()
   if(!file.exists(tmproot))
     dir.create(tmproot, showWarnings = F)
   liblocs <- file.path(tmproot, "Library")
   if(!file.exists(liblocs))
     dir.create(liblocs, showWarnings = F)
   ucd <- file.path(tmproot, "ucd")
-  on.exit(unlink(tmproot, recursive = T))
+  if(!on_github)
+    on.exit(unlink(tmproot, recursive = T))
 
   #unset PAT as core installation should be able to run without it
   # R_USER_CACHE_DIR is required by pak's cache mechanism

@@ -7,12 +7,16 @@ test_that("installation works", {
   tmproot <- if(on_github) "/home/runner/work/_temp/" else tempfile()
   if(!file.exists(tmproot))
     dir.create(tmproot, showWarnings = F)
-  liblocs <- file.path(tmproot, "Library")
+  # use a temporary location except on github actions
+  liblocs <- if(on_github) .libPaths()[[1L]] else {
+    on.exit(unlink(tmproot, recursive = T))
+    file.path(tmproot, "Library")
+  }
   if(!file.exists(liblocs))
     dir.create(liblocs, showWarnings = F)
   ucd <- file.path(tmproot, "ucd")
-  if(!on_github)
-    on.exit(unlink(tmproot, recursive = T))
+  if(!file.exists(ucd))
+    dir.create(ucd, showWarnings = F)
 
   #unset PAT as core installation should be able to run without it
   # R_USER_CACHE_DIR is required by pak's cache mechanism
@@ -27,7 +31,7 @@ test_that("installation works", {
   # we will use this as signal package to check install has completed
   pkgname <- 'nat.templatebrains'
   natmanager::install(collection = 'core', dependencies = TRUE,
-                      upgrade.dependencies = TRUE, lib = liblocs)
+                      upgrade.dependencies = FALSE, lib = liblocs)
   expect_true(requireNamespace(pkgname, lib.loc = liblocs, quietly=TRUE))
 })
 

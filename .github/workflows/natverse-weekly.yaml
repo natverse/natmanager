@@ -45,6 +45,11 @@ jobs:
         with:
           extra-packages: local::.
 
+      - name: Install X11 dependencies on MacOS
+        if: runner.os == 'macOS'
+        run: |
+          brew --cask install xquartz
+
       - name: natmanager core
         run: natmanager::install('core')
         shell: Rscript {0}

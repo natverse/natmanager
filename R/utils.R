@@ -19,6 +19,8 @@ have_xquartz <- function() {
   isTRUE(nzchar(Sys.which('Xquartz')))
 }
 
+on_ci <- function() isTRUE(as.logical(Sys.getenv('CI', unset=F)))
+
 system_requirements_ok <- function() {
 
   #Step:1, Check version of R ...
@@ -40,7 +42,7 @@ system_requirements_ok <- function() {
     return(TRUE)
   }
   if(grepl("^darwin", R.version$os)) {
-    if(!have_xquartz()){
+    if(!on_ci() && !have_xquartz()){
       usethis::ui_todo(paste("Please download and install Xquartz from",
                        "https://www.xquartz.org!\nThis is a system requirement",
                        "and is needed for 3D display of neurons."))

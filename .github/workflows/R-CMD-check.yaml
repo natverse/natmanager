@@ -56,7 +56,6 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
 
       - name: use natmanager for test install
-        if: !failure()
         run: natmanager::install('core')
         shell: Rscript {0}
 

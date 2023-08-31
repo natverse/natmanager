@@ -35,7 +35,8 @@ Suggests:
     mockery,
     rstudioapi,
     covr,
-    spelling
+    spelling,
+    rappdirs
 Encoding: UTF-8
 Language: en-GB
 RoxygenNote: 7.2.3

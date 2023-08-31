@@ -2,6 +2,8 @@ test_that("installation works", {
 
   # This test requires installation and should not be run on CRAN
   skip_on_cran()
+  # I have not figured out how to deal with sysreqs + pak on GHA in check
+  skip_on_ci()
   on_github=nzchar(Sys.getenv('GITHUB_ACTIONS'))
 
   tmproot <- if(on_github) "/home/runner/work/_temp/" else tempfile()

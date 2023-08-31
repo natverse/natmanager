@@ -71,8 +71,9 @@ install <- function(collection = c('core', 'natverse'), pkgs=NULL,
     repos = paste0("natverse/", pkgs)
   } else {
     collection=NULL
-    #use the actual repo if it is suggested otherwise assume natverse..
-    repos=ifelse(grepl("/", pkgs), pkgs, paste0('natverse/', pkgs))
+    # assume natverse org if pkg specification missing org
+    has_org=grepl("^[^@]+/", pkgs)
+    repos=ifelse(has_org, pkgs, paste0('natverse/', pkgs))
   }
 
   if(!system_requirements_ok())

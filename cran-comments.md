@@ -1,17 +1,27 @@
-This version of natmanager is updated due to previous version being archived on CRAN
-* Fixes URL redirects from codecov
-* Change examples from 'donttest' to 'dontrun' and run them only on interactive platforms
-* Protect 'mockery' api in testcases
+This version of natmanager sees a change of maintainer
+
+j.sridharrajan@gmail.com -> jefferis@gmail.com
+
+The original maintainer confirmed this to CRAN on Wed 6 September 2023 and
+the description has been modified accordingly.
+
+In addition "pak" is a new dependency.
 
 ## Test environments
-* Installation on multiple OS was validated using
-* Windows(Rhub): https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-87d17858b2724514a54ac01a7d6f0874
-* MacOS(Rhub):   https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-b417b59622094ab98e6c8efb1da8fecd
-* Linux(Rhub):   https://builder.r-hub.io/status/natmanager_0.4.9.tar.gz-30f0ce2602e2470a993bf07333ab7a53
 
+* Local R 4.3.1 on macosx
+* winbuilder r-devel
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 note
 
 There are no reverse dependencies 
+
+Win builder has just the one NOTE, as expected, re the new maintainer
+
+https://win-builder.r-project.org/mk7cS3McQADQ/00check.log
+
+Many thanks,
+
+Greg Jefferis.

@@ -1,3 +1,5 @@
+# natmanager (development version)
+
 # natmanager 0.5.0
 
 * switch to pak as default installer (should be faster and simpler)

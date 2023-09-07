@@ -32,10 +32,14 @@
 #'   hard (essential) dependencies, while \code{F} will not install any
 #'   dependencies (not recommended). See \code{pak::\link[pak]{pkg_install}} or
 #'   \code{\link[remotes]{install_github}} for further details.
-#' @param upgrade.dependencies Whether to install dependencies of requested
+#' @param upgrade.dependencies Whether to upgrade dependencies of requested
 #'   packages See the \code{upgrade} argument of
+#'   \code{pak::\link[pak]{pkg_install}} or
 #'   \code{\link[remotes]{install_github}} for details. The default value
-#'   (\code{TRUE}) will go ahead and upgrade all dependencies as necessary.
+#'   (\code{FALSE}) will do the minimum amount to enable you to install the
+#'   package(s) you have requested. In contrast \code{TRUE} will go ahead and
+#'   upgrade all dependencies to the latest version; pak will potentially
+#'   install source packages to do this.
 #' @param ... extra arguments to pass to \code{pak::\link[pak]{pkg_install}} or
 #'   \code{remotes::\link[remotes]{install_github}}.
 #' @importFrom utils install.packages
@@ -50,6 +54,8 @@
 #' # Full "batteries included" installation with all packages
 #' if(is.interactive()) {
 #' natmanager::install('natverse')
+#' # same but upgrading all dependencies to latest version
+#' natmanager::install('natverse', upgrade.dependencies = T)
 #' }
 #' # Install natverse, non-natverse package
 #' # for natverse packages no need to specify the repo
@@ -59,7 +65,7 @@
 #' }
 install <- function(collection = c('core', 'natverse'), pkgs=NULL,
                     dependencies = TRUE,
-                    upgrade.dependencies=TRUE,
+                    upgrade.dependencies=FALSE,
                     method=c("pak", "remotes"), ...) {
 
   collection=match.arg(collection)

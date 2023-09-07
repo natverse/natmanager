@@ -17,10 +17,14 @@ selfupdate(
 Defaults to GITHUB since this may well have a newer version than the CRAN
 package repository.}
 
-\item{upgrade.dependencies}{Whether to install dependencies of requested
+\item{upgrade.dependencies}{Whether to upgrade dependencies of requested
 packages See the \code{upgrade} argument of
+\code{pak::\link[pak]{pkg_install}} or
 \code{\link[remotes]{install_github}} for details. The default value
-(\code{TRUE}) will go ahead and upgrade all dependencies as necessary.}
+(\code{FALSE}) will do the minimum amount to enable you to install the
+package(s) you have requested. In contrast \code{TRUE} will go ahead and
+upgrade all dependencies to the latest version; pak will potentially
+install source packages to do this.}
 
 \item{force}{Force self update even if there doesn't seem to be an update
 (default \code{FALSE})}

@@ -30,7 +30,11 @@ selfupdate <- function(source = c('GITHUB', 'CRAN'),
   method=match.arg(method)
   pkgspec=ifelse(source=='CRAN', "natmanager", "natverse/natmanager")
   if(method=='pak') {
-    pak::pkg_install(pkgspec, upgrade=upgrade.dependencies, ...)
+    if(isTRUE(force))
+      warning("Ignoring force=T. To force pak to reinstall an up-to-date package",
+              "you must first delete it with:\n",
+              "`remove.packages()`", immediate.=TRUE)
+pak::pkg_install(pkgspec, upgrade=upgrade.dependencies, ...)
   }
   else if (source == 'CRAN') {
       remotes::install_cran(pkgspec, ...)

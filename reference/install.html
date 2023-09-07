@@ -42,7 +42,7 @@ check_pat can be used to check if you have a GITHUB_PAT
     
     <a class="navbar-brand me-2" href="../index.html">natmanager</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,7 @@ check_pat can be used to check if you have a GITHUB_PAT
 <span>  collection <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"core"</span>, <span class="st">"natverse"</span><span class="op">)</span>,</span>
 <span>  pkgs <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  dependencies <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  upgrade.dependencies <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  upgrade.dependencies <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pak"</span>, <span class="st">"remotes"</span><span class="op">)</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
@@ -130,10 +130,14 @@ dependencies (not recommended). See <code>pak::<a href="https://pak.r-lib.org/re
 
 
 <dt>upgrade.dependencies</dt>
-<dd><p>Whether to install dependencies of requested
+<dd><p>Whether to upgrade dependencies of requested
 packages See the <code>upgrade</code> argument of
+<code>pak::<a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></code> or
 <code><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></code> for details. The default value
-(<code>TRUE</code>) will go ahead and upgrade all dependencies as necessary.</p></dd>
+(<code>FALSE</code>) will do the minimum amount to enable you to install the
+package(s) you have requested. In contrast <code>TRUE</code> will go ahead and
+upgrade all dependencies to the latest version; pak will potentially
+install source packages to do this.</p></dd>
 
 
 <dt>method</dt>
@@ -172,6 +176,8 @@ the same PAT.</p></dd>
 <span class="r-in"><span><span class="co"># Full "batteries included" installation with all packages</span></span></span>
 <span class="r-in"><span><span class="kw">if</span><span class="op">(</span><span class="fu">is.interactive</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="fu">natmanager</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="st">'natverse'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># same but upgrading all dependencies to latest version</span></span></span>
+<span class="r-in"><span><span class="fu">natmanager</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="st">'natverse'</span>, upgrade.dependencies <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span><span class="co"># Install natverse, non-natverse package</span></span></span>
 <span class="r-in"><span><span class="co"># for natverse packages no need to specify the repo</span></span></span>

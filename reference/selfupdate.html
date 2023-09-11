@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">natmanager</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,14 +69,10 @@ package repository.</p></dd>
 
 
 <dt>upgrade.dependencies</dt>
-<dd><p>Whether to upgrade dependencies of requested
+<dd><p>Whether to install dependencies of requested
 packages See the <code>upgrade</code> argument of
-<code>pak::<a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></code> or
 <code><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></code> for details. The default value
-(<code>FALSE</code>) will do the minimum amount to enable you to install the
-package(s) you have requested. In contrast <code>TRUE</code> will go ahead and
-upgrade all dependencies to the latest version; pak will potentially
-install source packages to do this.</p></dd>
+(<code>TRUE</code>) will go ahead and upgrade all dependencies as necessary.</p></dd>
 
 
 <dt>force</dt>

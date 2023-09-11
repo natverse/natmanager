@@ -1,4 +1,8 @@
-# natmanager (development version)
+# natmanager 0.5.1
+* Switch to `upgrade.dependencies=F` to avoid `pak` preferring unnecessary 
+  source installations (50205e4)
+
+**Full Changelog**: https://github.com/natverse/natmanager/compare/v0.5.0...v0.5.1
 
 # natmanager 0.5.0
 

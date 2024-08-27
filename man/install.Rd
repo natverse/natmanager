@@ -36,7 +36,7 @@ packages See the \code{upgrade} argument of
 \code{\link[remotes]{install_github}} for details. The default value
 (\code{FALSE}) will do the minimum amount to enable you to install the
 package(s) you have requested. In contrast \code{TRUE} will go ahead and
-upgrade all dependencies to the latest version; pak will potentially
+upgrade all dependencies to the latest version; \code{pak} will potentially
 install source packages to do this.}
 
 \item{method}{Whether to use the \code{\link[pak]{pak}} (now the default) or

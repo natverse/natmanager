@@ -6,7 +6,7 @@
 
 # natmanager 0.5.0
 
-* switch to pak as default installer (should be faster and simpler)
+* switch to `pak` as default installer (should be faster and simpler)
 * dev: simpler/faster v2 r-lib/actions by @jefferis in https://github.com/natverse/natmanager/pull/20
 * dev: set up weekly natverse build by @jefferis in https://github.com/natverse/natmanager/pull/21
 * Switch to Greg as maintainer

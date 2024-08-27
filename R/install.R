@@ -25,7 +25,7 @@
 #'   \code{natverse}. See Description for more information.
 #' @param pkgs A character vector of package names specifying natverse packages
 #'   to install. When present overrides the \code{collection} argument.
-#' @param method Whether to use the \code{\link{pak}} (now the default) or
+#' @param method Whether to use the \code{\link[pak]{pak}} (now the default) or
 #'   \code{\link[remotes]{install_github}} package for installation.
 #' @param dependencies Which dependencies you want to install. The default value
 #'   (\code{TRUE}) will install all dependencies, \code{NA} will install only

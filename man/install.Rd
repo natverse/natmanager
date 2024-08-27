@@ -39,7 +39,7 @@ package(s) you have requested. In contrast \code{TRUE} will go ahead and
 upgrade all dependencies to the latest version; pak will potentially
 install source packages to do this.}
 
-\item{method}{Whether to use the \code{\link{pak}} (now the default) or
+\item{method}{Whether to use the \code{\link[pak]{pak}} (now the default) or
 \code{\link[remotes]{install_github}} package for installation.}
 
 \item{...}{extra arguments to pass to \code{pak::\link[pak]{pkg_install}} or

@@ -29,7 +29,7 @@ install source packages to do this.}
 \item{force}{Force self update even if there doesn't seem to be an update
 (default \code{FALSE})}
 
-\item{method}{Whether to use the \code{\link{pak}} (now the default) or
+\item{method}{Whether to use the \code{\link[pak]{pak}} (now the default) or
 \code{\link[remotes]{install_github}} package for installation.}
 
 \item{...}{extra arguments to pass to \code{pak::\link[pak]{pkg_install}} or

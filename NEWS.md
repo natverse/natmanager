@@ -1,3 +1,6 @@
+# natmanager 0.5.2
+* Fix Rd link targets missing package anchors for CRAN
+
 # natmanager 0.5.1
 * Switch to `upgrade.dependencies=F` to avoid `pak` preferring unnecessary 
   source installations (50205e4)
